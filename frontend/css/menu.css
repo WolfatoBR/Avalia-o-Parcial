@@ -1,10 +1,130 @@
 @import url('https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Ephesis&family=Finlandica:ital,wght@0,400..700;1,400..700&family=Indie+Flower&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     font-family: Roboto, sans-serif;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
 }
 
 body {
     background-color: #e7e7e7;
+}
+
+img {
+    height: auto;
+    width: 120px;
+}
+
+/* Menu Lateral */
+.menu-lateral {
+    width: 250px;
+    background-color: #201f1f;
+    color: white;
+    padding: 20px 0;
+    height: 100vh;
+    position: fixed;
+    transition: transform 0.3s ease;
+    z-index: 1000;
+}
+
+.logo {
+    text-align: center;
+    padding: 0 20px 20px;
+}
+
+.logo img {
+    max-width: 80%;
+    height: auto;
+}
+
+.contato_zap{
+    text-align: center;
+    justify-content: center;
+    background-color: #201f1f;
+    color: white;
+    max-width: max-content;
+    max-height: max-content;
+    float: right;
+}
+a div.contato_zap img{
+    justify-content: center;
+}
+
+.menu-itens {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-itens li a {
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    display: block;
+    transition: background 0.3s;
+}
+
+.menu-itens li a:hover {
+    background-color: #a34f1f;
+}
+
+.menu-itens li a i {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+}
+
+/* Conteúdo Principal */
+.conteudo-principal {
+    margin-left: 250px;
+    padding: 20px;
+    flex: 1;
+}
+
+/* Botão Mobile (oculto em desktop) */
+.menu-toggle {
+    display: none;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background: #201f1f;
+    color: white;
+    border: none;
+    font-size: 24px;
+    z-index: 1100;
+    cursor: pointer;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .menu-lateral {
+        transform: translateX(-100%);
+    }
+
+    .menu-lateral.ativo {
+        transform: translateX(0);
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .conteudo-principal {
+        margin-left: 0;
+    }
+}
+
+.menu-itens li {
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+    animation-delay: calc(var(--i) * 0.1s);
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
 }
