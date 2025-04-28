@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Ícones do Google fonts -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=person" />
+    <script src="/Avalia-o-Parcial/javascript/menu.js"></script>
+
+    <title>Instituto CoreClever</title>
+</head>
+
+<body>
+    <!-- Botão para abrir/fechar o menu (mobile) -->
+    <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+
+    <div class="chama-menu">
+    </div>
+    <!-- Para chamar o MENU SUPERIOR-->
+    <script>
+        fetch('../html/menu_sup.html')
+            .then(response => response.text())
+            .then(html => {
+                document.querySelector('.chama-menu').innerHTML = html;
+            });
+    </script>
+    <!-- Para chamar o MENU SUPERIOR-->
+
+    <!-- Botão do Zap -->
+    <div class="floating-button contato" onclick="window.location.href='https://wa.me/5571900000000'">
+        <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp">
+        <span class="texto-botao">Fale conosco!</span>
+    </div>
+    <!-- Botão do Zap -->
+
+    <!-- Conteúdo Principal -->
+    <main class="conteudo-principal">
+        <!-- Seu conteúdo aqui -->
+    </main>
+</body>
+
+</html>
