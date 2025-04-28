@@ -18,105 +18,146 @@ img {
     width: 120px;
 }
 
-/* Menu Lateral */
-.menu-lateral {
-    width: 250px;
+/* Menu Superior */
+.menu-superior {
     background-color: #201f1f;
     color: white;
-    padding: 20px 0;
-    height: 100vh;
     position: fixed;
-    transition: transform 0.3s ease;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    /* Altura do menu */
     z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.logo-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
 }
 
 .logo {
-    text-align: center;
-    padding: 0 20px 20px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-right: 100px;
 }
 
 .logo img {
-    max-width: 80%;
-    height: auto;
+    height: 60px;
+    width: 60px;
+    margin-right: 10px;
 }
 
-.contato_zap{
-    text-align: center;
-    justify-content: center;
-    background-color: #201f1f;
+.floating-icon {
+    position: fixed;
+    bottom: 30px;
+    /* Distância do fundo */
+    right: 30px;
+    /* Distância da direita */
+    background-color: #2c3e50;
+    /* Cor de fundo */
     color: white;
-    max-width: max-content;
-    max-height: max-content;
-    float: right;
-}
-a div.contato_zap img{
+    /* Cor do ícone */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    /* Formato circular */
+    display: flex;
     justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    /* Tamanho do ícone */
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Sombra */
+    z-index: 1000;
+    /* Garante que fique acima de outros elementos */
+    transition: all 0.3s ease;
+}
+
+.floating-icon:hover {
+    background-color: #1a252f;
+    /* Cor ao passar o mouse */
+    transform: scale(1.1);
+    /* Efeito de zoom */
 }
 
 .menu-itens {
     list-style: none;
-    padding: 0;
     margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+.pt_menu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+.nav-menu, .menu-itens {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
 }
 
 .menu-itens li a {
     color: white;
     text-decoration: none;
-    padding: 12px 20px;
-    display: block;
-    transition: background 0.3s;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    transition: background-color 0.3s;
+    border-radius: 10px;
 }
 
 .menu-itens li a:hover {
     background-color: #a34f1f;
 }
 
+.menu-itens li a:hover i {
+    color: #fff;
+    transition: color 0.3s;
+}
+
 .menu-itens li a i {
     margin-right: 10px;
     width: 20px;
     text-align: center;
+    color: #a34f1f;
 }
 
 /* Conteúdo Principal */
 .conteudo-principal {
-    margin-left: 250px;
+    margin-top: 70px;
+    /* Altura do menu */
     padding: 20px;
-    flex: 1;
 }
 
-/* Botão Mobile (oculto em desktop) */
+/* Botão Mobile */
 .menu-toggle {
-    display: none;
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    background: #201f1f;
-    color: white;
+    background: none;
     border: none;
-    font-size: 24px;
-    z-index: 1100;
+    color: white;
+    font-size: 1.5rem;
     cursor: pointer;
+    display: none;
 }
 
-/* Responsivo */
-@media (max-width: 768px) {
-    .menu-lateral {
-        transform: translateX(-100%);
-    }
-
-    .menu-lateral.ativo {
-        transform: translateX(0);
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-
-    .conteudo-principal {
-        margin-left: 0;
-    }
-}
-
+/* Animação dos itens */
 .menu-itens li {
     opacity: 0;
     animation: fadeIn 0.5s forwards;
@@ -128,3 +169,125 @@ a div.contato_zap img{
         opacity: 1;
     }
 }
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .menu-superior {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .menu-itens {
+        width: 100%;
+        display: none;
+    }
+
+    .menu-itens.ativo {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .conteudo-principal {
+        margin-top: 60px;
+    }
+}
+
+@media (min-width: 769px) {
+    .menu-superior {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+    }
+
+    .menu-itens {
+        flex-direction: row;
+    }
+
+    .logo-container {
+        padding: 5px 0;
+    }
+}
+
+/* Botão do Zap*/
+.floating-button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    /* Verde do WhatsApp */
+    border-radius: 30px;
+    /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 999;
+    overflow: hidden;
+    /* Esconde o texto que ultrapassar */
+    transition: width 0.3s ease, padding 0.3s ease;
+}
+
+.floating-button img {
+    width: 32px;
+    height: 32px;
+}
+
+.texto-botao {
+    opacity: 0;
+    width: 0;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    margin-left: 0;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+/* Quando o mouse passar por cima */
+.floating-button:hover {
+    width: auto;
+    /* Ajusta automaticamente ao conteúdo */
+    padding: 0 20px;
+    background-color: #279750;
+    /* Mantém bordas arredondadas */
+    border-radius: 30px;
+    transition: .6s;
+}
+
+.floating-button:hover .texto-botao {
+    opacity: 1;
+    width: auto;
+    margin-left: 10px;
+}
+
+.floating-button:hover img {
+    margin-right: 0;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .floating-button {
+        width: auto;
+        padding: 0 20px;
+    }
+
+    .texto-botao {
+        opacity: 1;
+        width: auto;
+        margin-left: 10px;
+    }
+}
+
+/* Botão do Zap*/
