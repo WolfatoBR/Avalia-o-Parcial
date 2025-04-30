@@ -6,12 +6,13 @@
             <span>Instituto CoreClever</span>
         </a>
     </div>
+
     <!-- Botão para mobile -->
-    <div class="btt_mobile">
+    <!-- <div class="btt_mobile">
         <button class="menu-toggle" aria-label="Abrir menu">
             <i class="fas fa-bars"></i>
         </button>
-    </div>
+    </div> -->
 
     <ul class="menu-itens">
         <li style="--i:0;" class="opt_menu">
@@ -38,15 +39,21 @@
                 <span>Contato</span>
             </a>
         </li>
-        <li style="--i:3;" class="opt_menu opt_aluno">
-            <a href="contato.html">
+        <li style="--i:3;" class="opt_menu opt_aluno has-submenu">
+            <a href="#" class="submenu-trigger">
                 <i>
-                    <span class="material-symbols-outlined" class="fas fa-envelope">
-                        person
-                    </span>
+                    <span class="material-symbols-outlined">person</span>
                 </i>
-                <span>Área do Aluno</span>
+                <span>Login</span>
+                <i class="fas fa-chevron-down submenu-icon"></i>
             </a>
+            
+            <!-- Submenu com as três opções -->
+            <ul class="submenu">
+                <li style="--i:0;"><a href="login_aluno.html"><i class="fas fa-user-graduate"></i> Aluno</a></li>
+                <li style="--i:1;"><a href="login_professor.html"><i class="fas fa-chalkboard-teacher"></i> Professor</a></li>
+                <li style="--i:2;"><a href="cadastro.html"><i class="fas fa-user-plus"></i> Cadastrar</a></li>
+            </ul>
         </li>
     </ul>
 </nav>

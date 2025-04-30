@@ -40,6 +40,10 @@ img {
     justify-content: center;
     flex-wrap: nowrap;
 }
+.titulo{
+    color: #fff;
+    flex-wrap: nowrap;
+}
 
 .logo-container {
     display: flex;
@@ -62,6 +66,8 @@ img {
     height: 60px;
     width: 60px;
     margin-right: 10px;
+    background-color: #a34f1f;
+    background-clip: padding-box;
 }
 
 .floating-icon {
@@ -111,6 +117,7 @@ img {
     align-items: center;
     justify-content: center;
     flex-wrap: nowrap;
+    padding-right: 100px;
 }
 
 .nav-menu, .menu-itens {
@@ -156,6 +163,68 @@ ul li a{
     align-items: center;
     justify-content: center;
 }
+/* Estilos do submenu */
+.has-submenu {
+    position: relative;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: #474747;
+    width: 100%;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 1001;
+}
+
+
+.has-submenu:hover .submenu,
+.has-submenu.active .submenu {
+    display: block;
+}
+
+.submenu li {
+    opacity: 0;
+    animation: fadeIn 0.3s forwards;
+    animation-delay: calc(var(--i) * 0.1s);
+    align-items: center;
+    justify-content: center;
+}
+
+.submenu li a {
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.submenu li a i {
+    margin-right: 10px;
+    width: 20px;
+    color: #a34f1f;
+}
+
+.submenu-icon {
+    margin-left: 10px;
+    transition: transform 0.3s;
+}
+
+.has-submenu.active .submenu-icon {
+    transform: rotate(180deg);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .submenu {
+        position: static;
+        width: 100%;
+    }
+}
 
 
 /* Botão Mobile */
@@ -200,9 +269,12 @@ ul li a{
 @media (max-width: 768px) {
     .menu-superior {
         flex-direction: row;
-        flex-wrap: wrap;
+        flex-wrap: rap;
     }
-
+    
+    .titulo{
+        flex-direction: nowrow;
+    }
     .menu-itens {
         width: 100%;
         display: none;
@@ -227,6 +299,9 @@ ul li a{
         align-items: center;
         justify-content: space-between;
         padding: 0 20px;
+    }
+    .titulo{
+        flex-direction: nowrow;
     }
 
     .menu-itens {
