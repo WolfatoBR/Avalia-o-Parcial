@@ -34,13 +34,15 @@ img {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-.menu-superior, .opt_aluno{
+.menu-superior,
+.opt_aluno {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: nowrap;
 }
-.titulo{
+
+.titulo {
     color: #fff;
     flex-wrap: nowrap;
 }
@@ -68,6 +70,7 @@ img {
     margin-right: 10px;
     background-color: #a34f1f;
     background-clip: padding-box;
+    border-radius: 5%;
 }
 
 .floating-icon {
@@ -104,7 +107,8 @@ img {
     /* Efeito de zoom */
 }
 
-.menu-itens, .opt_aluno {
+.menu-itens,
+.opt_aluno {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -112,7 +116,8 @@ img {
     flex-direction: column;
     height: 100%;
 }
-.pt_menu{
+
+.pt_menu {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -120,7 +125,8 @@ img {
     padding-right: 100px;
 }
 
-.nav-menu, .menu-itens {
+.nav-menu,
+.menu-itens {
     height: 100%;
     display: flex;
     align-items: center;
@@ -155,7 +161,8 @@ img {
     text-align: center;
     color: #a34f1f;
 }
-ul li a{
+
+ul li a {
     text-decoration: none;
     color: #fff;
     padding: 10px 20px;
@@ -163,6 +170,7 @@ ul li a{
     align-items: center;
     justify-content: center;
 }
+
 /* Estilos do submenu */
 .has-submenu {
     position: relative;
@@ -176,7 +184,7 @@ ul li a{
     background-color: #474747;
     width: 100%;
     border-radius: 0 0 10px 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 1001;
 }
 
@@ -237,17 +245,18 @@ ul li a{
     display: none;
 }
 
-.btt_mobile{
+.btt_mobile {
     display: flex;
     background: none;
     border: none;
     color: white;
     font-size: 1.5rem;
     cursor: pointer;
-    
+
 }
 
-.menu-superior, .btt_mobile{
+.menu-superior,
+.btt_mobile {
     align-items: center;
     justify-self: center;
 }
@@ -271,10 +280,11 @@ ul li a{
         flex-direction: row;
         flex-wrap: rap;
     }
-    
-    .titulo{
+
+    .titulo {
         flex-direction: nowrow;
     }
+
     .menu-itens {
         width: 100%;
         display: none;
@@ -300,7 +310,8 @@ ul li a{
         justify-content: space-between;
         padding: 0 20px;
     }
-    .titulo{
+
+    .titulo {
         flex-direction: nowrow;
     }
 
