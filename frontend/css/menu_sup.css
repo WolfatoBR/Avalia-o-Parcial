@@ -146,8 +146,9 @@ img {
     border-radius: 10px;
 }
 
-.menu-itens li a:hover {
+.submenu li:hover {
     background-color: #a34f1f;
+    border-radius: 0 0 10px 10px;
 }
 
 .menu-itens li a:hover i {
@@ -179,13 +180,21 @@ ul li a {
 .submenu {
     display: none;
     position: absolute;
-    left: 0;
+    /* Centraliza horizontalmente */
+    transform: translateX(-50%);
+    /* Ajusta o posicionamento */
     top: 100%;
+    left: 50%;
+    width: max-content;
+    height: max-content;
     background-color: #474747;
-    width: 100%;
     border-radius: 0 0 10px 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 0;
+    /* Espaçamento interno vertical */
     z-index: 1001;
+    text-align: center;
+    /* Alinha o texto ao centro */
 }
 
 
@@ -198,8 +207,14 @@ ul li a {
     opacity: 0;
     animation: fadeIn 0.3s forwards;
     animation-delay: calc(var(--i) * 0.1s);
-    align-items: center;
-    justify-content: center;
+    list-style: none;
+    /* Remove os marcadores padrão */
+    padding: 0;
+    /* Remove padding extra */
+    margin: 0;
+    /* Remove margens */
+    width: 100%;
+    /* Ocupa toda a largura do .submenu */
 }
 
 .submenu li a {
@@ -207,8 +222,9 @@ ul li a {
     display: flex;
     align-items: center;
     justify-content: center;
-    align-items: center;
-    display: flex;
+    /* Centraliza o conteúdo horizontalmente */
+    color: #fff;
+    text-decoration: none;
 }
 
 .submenu li a i {
