@@ -44,20 +44,41 @@
 
     <!-- Conteúdo Principal -->
     <main class="conteudo-principal">
-    <!-- Seu conteúdo aqui -->
-    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="https://img.freepik.com/fotos-gratis/retrato-de-um-estudante-latino-atraente-fazendo-algum-trabalho-escolar-com-um-laptop-na-biblioteca_662251-1218.jpg?t=st=1746056325~exp=1746059925~hmac=d26698b953063bfbe352d008a47305d61262216c7e2290adb29c981727ee2175&w=740" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="https://img.freepik.com/fotos-gratis/estudante-adolescente-em-fones-de-ouvido-sentado-a-mesa-e-digitando-no-notebook_23-2148166385.jpg?t=st=1746056403~exp=1746060003~hmac=ccb3b32cc708f59e0e487d9b5ebcbe0c9542f012d464e209b26eab810bdc0158&w=826" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="https://img.freepik.com/fotos-gratis/tutor-ajudando-os-alunos-na-aula-de-informatica_74855-1668.jpg?t=st=1746056514~exp=1746060114~hmac=a9f3f049b809187af5979552103f8643582d5b70ccfcc971f7e0590ea255ce25&w=826" class="d-block w-100" alt="...">
-          </div>
+        <div id="autoCarousel" class="carousel slide" data-bs-ride="carousel">
+            <!-- Indicadores -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#autoCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#autoCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#autoCarousel" data-bs-slide-to="2"></button>
+            </div>
+            
+            <!-- Slides -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://img.freepik.com/fotos-gratis/retrato-de-um-estudante-latino-atraente-fazendo-algum-trabalho-escolar-com-um-laptop-na-biblioteca_662251-1218.jpg" 
+                         class="d-block w-100" 
+                         alt="Estudante na biblioteca">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://img.freepik.com/fotos-gratis/estudante-adolescente-em-fones-de-ouvido-sentado-a-mesa-e-digitando-no-notebook_23-2148166385.jpg" 
+                         class="d-block w-100" 
+                         alt="Estudante com notebook">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://img.freepik.com/fotos-gratis/tutor-ajudando-os-alunos-na-aula-de-informatica_74855-1668.jpg" 
+                         class="d-block w-100" 
+                         alt="Professor ajudando alunos">
+                </div>
+            </div>
+            
+            <!-- Controles -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#autoCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#autoCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
         </div>
-      </div>
 
     </main>
 </body>
