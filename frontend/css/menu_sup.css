@@ -1,18 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Ephesis&family=Finlandica:ital,wght@0,400..700;1,400..700&family=Indie+Flower&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    font-family: Roboto, sans-serif;
-    list-style: none;
-    text-decoration: none;
-    box-sizing: border-box;
-}
-
-body {
-    background-color: #e7e7e7;
-}
-
 img {
     height: auto;
     width: 120px;
@@ -68,7 +53,7 @@ img {
     height: 60px;
     width: 60px;
     margin-right: 10px;
-    background-color: #a34f1f;
+    background-color: #863a0d;
     background-clip: padding-box;
     border-radius: 5%;
 }
