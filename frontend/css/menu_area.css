@@ -154,15 +154,18 @@
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     animation: fadeIn 1s ease-out;
+    transition: .5s;
+    text-align: left;
+    justify-content: center;
+    align-items: center;
     z-index: 1000;
-    gap: 10px;
 }
 
 /* Posiciona cada div em cantos diferentes */
 .dvop_cursos:nth-child(2) {
     /* daev1 */
     bottom: 0;
-    right: 20px;
+    right: 6px;
     white-space: rap;
 }
 
@@ -170,7 +173,7 @@
     /* daev2 */
     bottom: 250px;
     /* Acima do primeiro */
-    right: 20px;
+    right: 12px;
     white-space: rap;
 }
 
@@ -178,7 +181,7 @@
     /* daev3 */
     bottom: 125px;
     /* Acima do segundo */
-    right: 20px;
+    right: 18px;
     white-space: rap;
 }
 
@@ -187,6 +190,7 @@
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
     animation: fadeIn 1s ease-out;
     transition: .5s;
+    z-index: 2000;
 }
 
 /* Se quiser manter a animação que já existe */
