@@ -228,13 +228,14 @@ ul li a {
 }
 
 /* Mobile */
+/*
 @media (max-width: 768px) {
     .submenu {
         position: static;
         width: 100%;
     }
 }
-
+*/
 
 /* Botão Mobile */
 .menu-toggle {
