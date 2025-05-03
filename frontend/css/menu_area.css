@@ -143,8 +143,10 @@
 
 .dvop_cursos {
     position: absolute;
-    width: 200px; /* Largura aumentada para melhor visualização */
-    min-height: 80px; /* Altura mínima para conteúdo */
+    width: 200px;
+    /* Largura aumentada para melhor visualização */
+    min-height: 100px;
+    /* Altura mínima para conteúdo */
     color: white;
     background-color: rgba(163, 79, 31, 0.85);
     border-radius: 5px;
@@ -152,10 +154,12 @@
     cursor: pointer;
     animation: fadeIn 1s ease-out;
     transition: .5s;
-    padding: 15px; /* Espaçamento interno */
-    box-sizing: border-box; /* Garante que o padding não some à largura */
+    padding: 15px;
+    /* Espaçamento interno */
+    box-sizing: border-box;
+    /* Garante que o padding não some à largura */
     z-index: 1000;
-    
+
     /* Centralização do conteúdo */
     display: flex;
     justify-content: center;
@@ -164,19 +168,24 @@
 }
 
 /* Posicionamento individual para cada caixa */
-.dvop_cursos:nth-child(2) { /* Primeira caixa */
-    bottom: 20px;
+.dvop_cursos:nth-child(2) {
+    /* Primeira caixa */
+    bottom: 2px;
+    right: 2px;
+}
+
+.dvop_cursos:nth-child(3) {
+    /* Segunda caixa */
+    bottom: 82px;
+    /* Posicionada acima da primeira */
     right: 20px;
 }
 
-.dvop_cursos:nth-child(3) { /* Segunda caixa */
-    bottom: 120px; /* Posicionada acima da primeira */
-    right: 20px;
-}
-
-.dvop_cursos:nth-child(4) { /* Terceira caixa */
-    bottom: 220px; /* Posicionada acima da segunda */
-    right: 20px;
+.dvop_cursos:nth-child(4) {
+    /* Terceira caixa */
+    bottom: 205px;
+    /* Posicionada acima da segunda */
+    right: 35px;
 }
 
 .dvop_cursos:hover {
