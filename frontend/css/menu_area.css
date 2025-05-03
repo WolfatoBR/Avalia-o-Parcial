@@ -43,6 +43,7 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    min-height: 450px;
     width: 100vw;
     height: 100%;
     padding-bottom: 50%;
@@ -55,14 +56,16 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+    background: radial-gradient(circle, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
     z-index: -1;
 }
 
-section div div h1, p{
+section div div h1,
+p {
     position: relative;
-    left: 20px;
+    top: 135px;
+    left: 50px;
     width: max-content;
     color: aliceblue;
-    background-color: #a34f1f;
+    background-color: none;
 }
