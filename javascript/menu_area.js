@@ -1,22 +1,14 @@
-
 document.addEventListener('DOMContentLoaded', function() {
-    const carousel = new bootstrap.Carousel(document.getElementById('autoCarousel'), {
-        interval: 5000, // Muda a cada 5 segundos
-        wrap: true, // Volta ao primeiro slide após o último
-        pause: 'hover' // Pausa quando o mouse está sobre o carrossel
-    });
+    const slides = document.querySelectorAll('.slide');
+    let currentSlide = 0;
+    const tempoTransicao = 3000; // ALTERE AQUI o valor em milissegundos
     
-    // Opcional: Pausar/continuar ao clicar
-    const carouselElement = document.getElementById('autoCarousel');
-    let isPlaying = true;
+    function showSlide() {
+        slides.forEach(slide => slide.classList.remove('ativo'));
+        slides[currentSlide].classList.add('ativo');
+        currentSlide = (currentSlide + 1) % slides.length;
+    }
     
-    carouselElement.addEventListener('click', function() {
-        if (isPlaying) {
-            carousel.pause();
-            isPlaying = false;
-        } else {
-            carousel.cycle();
-            isPlaying = true;
-        }
-    });
+    showSlide();
+    setInterval(showSlide, tempoTransicao); // Usa a variável definida acima
 });
