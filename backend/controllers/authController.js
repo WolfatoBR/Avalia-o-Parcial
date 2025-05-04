@@ -11,4 +11,14 @@ const register = async (req, res) => {
 
 }
 
-module.exports = { register }
+const login = async(req,res) => {
+    try{
+        const {email, senha} = req.body
+        const { user, token }= await authService.loginUser({email, senha})
+        res.status(200).json({message: 'Login realizado com sucesso', user, token})
+    } catch (error){
+        res.status(401).json({error: error.message})
+    }
+}
+
+module.exports = { register, login } 
