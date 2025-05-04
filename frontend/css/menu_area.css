@@ -214,8 +214,8 @@
 .carrossel-container {
     position: relative;
     top: 30px;
-    width: 100%;
-    max-width: 1200px;
+    width: 100vw;
+    min-height: 100%;
     margin: 30px auto;
     position: relative;
     overflow: hidden;
@@ -252,6 +252,7 @@
     object-fit: cover;
     object-position: center;
     background-repeat: no-repeat;
+    opacity: 40%;
 }
 
 @media (max-width: 768px) {
