@@ -768,6 +768,10 @@ section div div img {
     margin-bottom: 30px;
 }
 
+.grupo-modulos-ancoragem, .destaques-finais-ancoragem{
+    cursor: default;
+}
+
 .modulo-conteudo-militar {
     background: white;
     border-radius: 8px;
