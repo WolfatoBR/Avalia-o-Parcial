@@ -309,3 +309,22 @@
 .dvpsq_curso.typing:after {
     opacity: 1;
 }
+
+.lk_buscar{
+    position: relative;
+    display: flex;
+    float: right;
+    justify-content: end;
+    align-self: center;
+    margin-right: 15px;
+    color: white;
+    width: max-content;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.lk_buscar:hover {
+    color: #a34f1f;
+    transition: all 0.2s ease-in-out;
+    text-shadow: 0 0 2px #ff6600;
+}
