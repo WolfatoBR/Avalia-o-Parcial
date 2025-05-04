@@ -438,6 +438,11 @@ section div div img {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
+    width: 100%;
+    height: 100%;
+    justify-items: center;
+    align-items: center;
+    padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -486,10 +491,10 @@ section div div img {
 .foto-avaliacao img:hover {
     opacity: 100%;
     position: relative;
-    top: 3px;
-    border-radius: 5%;
+    top: 1px;
+    border-radius: 38%;
     border: none;
-    transform: scale(1.35);
+    transform: scale(1.2);
     transition: all 0.5s ease-in-out;
     z-index: 9;
 }
@@ -572,5 +577,143 @@ section div div img {
 
     .cabecalho-depoimentos h2 {
         font-size: 1.8em;
+    }
+}
+
+/* Carrossel de Vídeos do YouTube */
+.carrossel-videos {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.titulo-carrossel {
+    color: #a34f1f;
+    margin-bottom: 30px;
+    font-size: 2em;
+}
+
+.carrossel-container2 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carrossel-videos-inner {
+    position: relative;
+    height: 450px;
+    /* Mantenha a mesma altura do iframe */
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    max-width: 800px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.video-item {
+    min-width: 100%;
+    transition: transform 2s ease-in-out, opacity .8s ease-in-out;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+.video-item.ativo {
+    display: block;
+    opacity: 1;
+    transform: translateX(0);
+    z-index: 1;
+}
+
+.video-item.saindo {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+/* Para animação de voltar */
+.video-item.voltar {
+    transform: translateX(-100%);
+}
+
+.video-item.voltar.ativo {
+    transform: translateX(0);
+}
+
+.video-item.voltar.saindo {
+    transform: translateX(100%);
+}
+
+.video-item iframe {
+    width: 100%;
+    height: 450px;
+    border: none;
+}
+
+.carrossel-controle {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(163, 79, 31, 0.7);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.carrossel-controle:hover {
+    background-color: #a34f1f;
+}
+
+.anterior {
+    left: 10px;
+}
+
+.proximo {
+    right: 10px;
+}
+
+.carrossel-indicadores {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.indicador {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.indicador.ativo {
+    background-color: #a34f1f;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .video-item iframe {
+        height: 300px;
+    }
+
+    .carrossel-controle {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
     }
 }
