@@ -46,16 +46,33 @@
     width: 100%;
     height: 80vh;
     padding-bottom: 50%;
-    z-index: 1;
+    z-index: 10;
 }
 
-.slide_principal {
+.barra_topo {
     height: 2%;
     width: 100%;
     overflow: hidden;
     /* Esconde o texto que ultrapassar */
     background-color: rgb(78, 78, 78);
     padding: 10px 0;
+    z-index: 9;
+}
+
+section div div img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: -6px;
+    left: 0;
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    object-position: center;
+    background-repeat: no-repeat;
+    opacity: 30%;
+    z-index: 2;
 }
 
 .p_lider {
@@ -73,6 +90,7 @@
     margin: 0;
     font-size: .8em;
     animation: deslizar 25s linear infinite;
+    z-index: 5;
 }
 
 @keyframes deslizar {
@@ -100,7 +118,7 @@
     right: 0;
     bottom: 0;
     background: radial-gradient(circle, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
-    z-index: 1;
+    z-index: 10;
     align-items: center;
 }
 
@@ -127,7 +145,7 @@
 
 .dv_infos h2 {
     /* Suas propriedades existentes */
-    animation: piscaDestaque 1s infinite;
+    animation: piscaDestaque 1.5s infinite;
 }
 
 @keyframes piscaDestaque {
@@ -192,7 +210,8 @@
     bottom: 20px;
     display: flex;
     flex-direction: column;
-    gap: 10px; /* Espaço entre os elementos */
+    gap: 10px;
+    /* Espaço entre os elementos */
     z-index: 2000;
 }
 
@@ -219,9 +238,10 @@
     background-color: rgba(192, 99, 45, 0.85);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
     animation: fadeIn 1s ease-out;
-    right: 20px;
     transition: all 0.2s ease-in-out;
     z-index: 2000;
+    transform: scale(1.05);
+    /* Efeito de zoom */
 }
 
 /* Se quiser manter a animação que já existe */
@@ -243,18 +263,20 @@
     position: relative;
     top: 30px;
     width: 100%;
-    min-height: 100%;
+    height: 100vh;
+    background-color: #201f1f;
     margin: 30px auto;
-    position: relative;
-    overflow: hidden;
-    border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1;
 }
 
 .carrossel {
     display: flex;
-    height: 400px;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
     position: relative;
+    opacity: 20%;
 }
 
 .slide {
@@ -262,7 +284,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    opacity: 0;
+    opacity: 20%;
     transition: transform 2s ease-in-out, opacity .8s ease-in-out;
     z-index: 0;
     /* Efeito de zoom */
@@ -272,6 +294,7 @@
     transform: scale(1.2);
     opacity: 1;
     z-index: 1;
+    animation: pulse 3s ease-in-out infinite;
 }
 
 .slide img {
@@ -354,4 +377,180 @@
     color: #a34f1f;
     transition: all 0.2s ease-in-out;
     text-shadow: 0 0 2px #ff6600;
+}
+
+
+
+/* Seção Depoimentos - Estilo Estratégia Militares */
+.depoimentos-militares {
+    background: linear-gradient(to bottom, #f9f9f9 0%, #fff 100%);
+    padding: 60px 20px;
+    border-top: 3px solid #a34f1f;
+    border-bottom: 3px solid #a34f1f;
+    margin: 0;
+}
+
+.cabecalho-depoimentos {
+    text-align: center;
+    max-width: 800px;
+    margin: 0;
+}
+
+.cabecalho-depoimentos h2 {
+    color: #333;
+    font-size: 2.2em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.cabecalho-depoimentos h2 span {
+    color: #a34f1f;
+    font-weight: 700;
+}
+
+.cabecalho-depoimentos p {
+    color: #666;
+    font-size: 1.1em;
+    margin-top: 20px;
+}
+
+.carrossel-depoimentos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card-militar {
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    border-left: 4px solid #a34f1f;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin-top: 65px;
+    z-index: 5;
+}
+
+.card-militar:hover {
+    box-shadow: 0 10px 25px rgba(163, 79, 31, 0.15);
+}
+
+.foto-avaliacao {
+    padding: 20px 20px 10px;
+    text-align: center;
+    background-color: rgba(163, 79, 31, 0.8);
+}
+
+.foto-avaliacao img {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    margin: 0 auto;
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    opacity: 70%;
+    border: 3px solid rgba(163, 79, 31, 0.8);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+}
+
+.foto-avaliacao img:hover {
+    opacity: 100%;
+    position: relative;
+    top: 3px;
+    border-radius: 5%;
+    border: none;
+    transform: scale(1.35);
+    transition: all 0.2s ease-in-out;
+    z-index: 9;
+}
+
+.estrelas {
+    margin: 10px 0;
+    color: #ffc107;
+    font-size: 1.2em;
+    letter-spacing: 2px;
+    cursor: default;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 15px;
+}
+
+.texto-militar {
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.texto-militar:hover {
+    background-color: rgba(163, 79, 31, 0.1);
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.texto-militar h3 {
+    color: #222;
+    margin-bottom: 5px;
+    font-size: 1.3em;
+    cursor: default;
+}
+
+.texto-militar h3:hover {
+    color: #a34f1f;
+    font-weight: 700;
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.cargo {
+    color: #a34f1f;
+    font-weight: 600;
+    font-size: 0.9em;
+    margin-bottom: 15px;
+    display: block;
+    cursor: default;
+}
+
+.depoimento {
+    color: #555;
+    line-height: 1.6;
+    font-style: italic;
+    position: relative;
+    padding-left: 20px;
+}
+
+.depoimento::before {
+    content: "\201C";
+    /* Aspas simples */
+    font-family: "Times New Roman", Times, serif;
+    font-weight: bold;
+    font-style: italic;
+    /* Aspas duplas */
+    font-size: 3em;
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #a34f1f;
+    font-size: 2em;
+    line-height: 1;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .carrossel-depoimentos {
+        grid-template-columns: 1fr;
+    }
+
+    .cabecalho-depoimentos h2 {
+        font-size: 1.8em;
+    }
 }
