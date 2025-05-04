@@ -326,82 +326,72 @@ ul li a {
     }
 }
 
-/* Botão do Zap*/
 .floating-button {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    width: 60px;
-    height: 60px;
+    width: 54px;
+    height: 58px;
     background-color: #25D366;
-    /* Verde do WhatsApp */
-    border-radius: 30px;
-    /* Bordas arredondadas */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 30px 30px 30px 0px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     z-index: 999;
     overflow: hidden;
-    /* Esconde o texto que ultrapassar */
-    transition: width 0.3s ease, padding 0.3s ease;
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transform-origin: center;
 }
 
 .floating-button img {
-    width: 32px;
-    height: 32px;
+    width: 35px;
+    height: 35px;
+    transition: all 0.4s ease-out;
 }
 
 .texto-botao {
+    position: absolute;
+    left: 50px;
     opacity: 0;
-    width: 0;
     color: white;
-    font-family: Arial, sans-serif;
-    font-weight: bold;
-    margin-left: 0;
-    transition: all 0.3s ease;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
     white-space: nowrap;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+    transform: translateX(-10px);
 }
 
-/* Quando o mouse passar por cima */
+/* Efeito hover */
 .floating-button:hover {
-    width: auto;
-    /* Ajusta automaticamente ao conteúdo */
-    padding: 0 20px;
-    background-color: #279750;
-    /* Mantém bordas arredondadas */
-    border-radius: 30px;
-    transition: .6s;
+    width: 200px;
+    padding: 0 25px 0 20px;
+    background-color: #128C7E;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.floating-button:hover img {
+    transform: scale(1.2);
+    position: absolute;
+    left: 10px;
 }
 
 .floating-button:hover .texto-botao {
     opacity: 1;
+    transform: translateX(0);
     width: auto;
-    margin-left: 10px;
+    margin-left: 12px;
 }
 
-.floating-button:hover img {
-    margin-right: 0;
+/* Efeito de pulso (opcional) */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
 }
 
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-    }
+.floating-button {
+    animation: pulse 3s infinite;
 }
-
-@media (max-width: 768px) {
-    .floating-button {
-        width: auto;
-        padding: 0 20px;
-    }
-
-    .texto-botao {
-        opacity: 1;
-        width: auto;
-        margin-left: 10px;
-    }
-}
-
-/* Botão do Zap*/
