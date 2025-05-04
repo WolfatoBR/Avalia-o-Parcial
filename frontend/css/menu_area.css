@@ -280,9 +280,14 @@ section div div img {
 }
 
 .slide {
-    min-width: 100%;
+    width: 130%;
     position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     top: 0;
+    bottom: 0;
+    right: 0;
     left: 0;
     opacity: 20%;
     transition: transform 2s ease-in-out, opacity .8s ease-in-out;
@@ -470,7 +475,7 @@ section div div img {
     border-radius: 5%;
     border: none;
     transform: scale(1.35);
-    transition: all 0.2s ease-in-out;
+    transition: all 0.5s ease-in-out;
     z-index: 9;
 }
 
