@@ -49,6 +49,49 @@
     z-index: 1;
 }
 
+.slide_principal {
+    height: 2%;
+    width: 100%;
+    overflow: hidden;
+    /* Esconde o texto que ultrapassar */
+    background-color: rgb(78, 78, 78);
+    padding: 10px 0;
+}
+
+.p_lider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Mudamos para inline-block */
+    position: relative;
+    letter-spacing: 2px;
+    /* Espaço entre caracteres */
+    height: 100%;
+    white-space: nowrap;
+    /* Impede quebra de linha */
+    color: white;
+    margin: 0;
+    font-size: .8em;
+    animation: deslizar 25s linear infinite;
+}
+
+@keyframes deslizar {
+    0% {
+        transform: translateX(70%);
+        /* Começa à direita */
+    }
+
+    100% {
+        transform: translateX(-100%);
+        /* Termina à esquerda */
+    }
+}
+
+/* Pausa ao passar o mouse (opcional) */
+.p_lider:hover {
+    animation-play-state: paused;
+}
+
 .dv_caixa {
     position: absolute;
     display: flex;
@@ -142,58 +185,42 @@
     }
 }
 
-.dvop_cursos {
+/* Container principal que vai agrupar os três elementos */
+.dvop_cursos-container {
     position: absolute;
-    width: 200px;
-    /* Largura aumentada para melhor visualização */
-    min-height: 100px;
-    /* Altura mínima para conteúdo */
+    right: 25px;
+    bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espaço entre os elementos */
+    z-index: 2000;
+}
+
+/* Estilos individuais de cada elemento */
+.dvop_cursos {
+    width: 150px;
+    height: 90px;
     color: white;
     background-color: rgba(163, 79, 31, 0.85);
-    border-radius: 5px;
+    border-radius: 12px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
+    cursor: default;
     animation: fadeIn 1s ease-out;
     transition: .5s;
     padding: 15px;
-    /* Espaçamento interno */
     box-sizing: border-box;
-    /* Garante que o padding não some à largura */
-    z-index: 1000;
-    /* Centralização do conteúdo */
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
 
-/* Posicionamento individual para cada caixa */
-.dvop_cursos:nth-child(2) {
-    /* Primeira caixa */
-    bottom: 2px;
-    right: 2px;
-}
-
-.dvop_cursos:nth-child(3) {
-    /* Segunda caixa */
-    bottom: 98px;
-    /* Posicionada acima da primeira */
-    right: 2px;
-}
-
-.dvop_cursos:nth-child(4) {
-    /* Terceira caixa */
-    bottom: 194px;
-    /* Posicionada acima da segunda */
-    right: 2px;
-}
-
 .dvop_cursos:hover {
     background-color: rgba(192, 99, 45, 0.85);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
     animation: fadeIn 1s ease-out;
-    transition: .5s;
     right: 20px;
+    transition: all 0.2s ease-in-out;
     z-index: 2000;
 }
 
@@ -236,7 +263,7 @@
     top: 0;
     left: 0;
     opacity: 0;
-    transition: transform .5s ease-in-out, opacity .3s ease-in-out;
+    transition: transform 2s ease-in-out, opacity .8s ease-in-out;
     z-index: 0;
     /* Efeito de zoom */
 }
@@ -310,7 +337,7 @@
     opacity: 1;
 }
 
-.lk_buscar{
+.lk_buscar {
     position: relative;
     display: flex;
     float: right;
