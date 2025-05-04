@@ -44,6 +44,7 @@
     background-repeat: no-repeat;
     min-height: 680px;
     width: 100%;
+    height: 100vh;
     padding-bottom: 50%;
     z-index: 1;
 }
@@ -214,7 +215,7 @@
 .carrossel-container {
     position: relative;
     top: 30px;
-    width: 100vw;
+    width: 100%;
     min-height: 100%;
     margin: 30px auto;
     position: relative;
@@ -264,4 +265,62 @@
         margin: 20px auto;
         border-radius: 0;
     }
+}
+
+.dvpsq_curso {
+    /* Mantenha suas propriedades atuais */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 98%;
+    height: 170px;
+    padding: 22px;
+    background-color: #201f1f;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    text-align: center;
+    animation: fadeIn 1s ease-out;
+    z-index: 1;
+}
+
+.input_curso {
+    position: relative;
+    top: 28%;
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 5px;
+    border: 2px solid #a34f1f;
+    background-color: rgba(163, 79, 31, 0.3);
+    color: white;
+    font-size: 1.2em;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Efeitos do placeholder */
+.input_curso::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+    font-style: italic;
+}
+
+/* Efeito de cursor piscando */
+@keyframes pisca {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.dvpsq_curso:after {
+    content: "|";
+    position: absolute;
+    right: 40px;
+    bottom: 40%;
+    color: white;
+    animation: pisca 1s infinite;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.dvpsq_curso.typing:after {
+    opacity: 1;
 }
