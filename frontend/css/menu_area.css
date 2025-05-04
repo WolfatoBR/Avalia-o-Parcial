@@ -391,7 +391,7 @@ section div div img {
     background: linear-gradient(to bottom, #f9f9f9 0%, #fff 100%);
     padding: 60px 20px;
     border-top: 3px solid #a34f1f;
-    border-bottom: 3px solid #a34f1f;
+    border-bottom: none;
     margin: 0;
     width: 100%;
     height: 100%;
@@ -586,10 +586,11 @@ section div div img {
     margin: 50px auto;
     padding: 0 20px;
     text-align: center;
+    border-bottom: none;
 }
 
 .titulo-carrossel {
-    color: #a34f1f;
+    color: #d67e4b;
     margin-bottom: 30px;
     font-size: 2em;
 }
@@ -715,5 +716,128 @@ section div div img {
         width: 30px;
         height: 30px;
         font-size: 16px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* Seção Porto de Identidade - Classes Únicas */
+.militar-identidade-ancoragem {
+    background: linear-gradient(to bottom, rgba(163, 79, 31, 0.1) 70%, #201f1f 100%);
+    padding: 80px 0;
+    border-top: none;
+    border-bottom: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container-militar-principal {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.titulo-ancoragem-militar {
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.subtitulo-ancoragem {
+    color: white;
+    font-size: .9rem;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 50px;
+    line-height: 1.6;
+}
+
+.grupo-modulos-ancoragem {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.modulo-conteudo-militar {
+    background: white;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 4px solid #a34f1f;
+}
+
+.modulo-conteudo-militar:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.titulo-modulo-militar {
+    color: #2d3748;
+    font-size: 1.3rem;
+    margin: 15px 0;
+    font-weight: 600;
+}
+
+.texto-modulo-militar {
+    color: #4a5568;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.icone-modulo-militar {
+    font-size: 2.5rem;
+    color: #a34f1f;
+}
+
+.destaques-finais-ancoragem {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+.item-destaque-militar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #f0f4f8;
+    padding: 15px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    color: #2d3748;
+}
+
+.simbolo-material-militar {
+    color: #a34f1f;
+    font-size: 1.5rem;
+    font-family: 'Material Symbols Outlined';
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .titulo-ancoragem-militar {
+        font-size: 2rem;
+    }
+
+    .grupo-modulos-ancoragem {
+        grid-template-columns: 1fr;
+    }
+
+    .destaques-finais-ancoragem {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
     }
 }
