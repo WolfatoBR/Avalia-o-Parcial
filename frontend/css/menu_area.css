@@ -38,31 +38,810 @@
 .sec_top {
     position: relative;
     top: 60px;
-    position: relative;
     background-image: url(../img/estudantes_01.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    width: 100vw;
-    height: 100%;
+    min-height: 680px;
+    width: 100%;
+    height: 80vh;
     padding-bottom: 50%;
-    z-index: 1;
+    z-index: 10;
+}
+
+.barra_topo {
+    height: 2%;
+    width: 100%;
+    overflow: hidden;
+    /* Esconde o texto que ultrapassar */
+    background-color: rgb(78, 78, 78);
+    padding: 10px 0;
+    z-index: 9;
+}
+
+section div div img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: -6px;
+    left: 0;
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    object-position: center;
+    background-repeat: no-repeat;
+    opacity: 30%;
+    z-index: 2;
+}
+
+.p_lider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Mudamos para inline-block */
+    position: relative;
+    letter-spacing: 2px;
+    /* Espaço entre caracteres */
+    height: 100%;
+    white-space: nowrap;
+    /* Impede quebra de linha */
+    color: white;
+    margin: 0;
+    font-size: .8em;
+    animation: deslizar 25s linear infinite;
+    z-index: 5;
+}
+
+@keyframes deslizar {
+    0% {
+        transform: translateX(70%);
+        /* Começa à direita */
+    }
+
+    100% {
+        transform: translateX(-100%);
+        /* Termina à esquerda */
+    }
+}
+
+/* Pausa ao passar o mouse (opcional) */
+.p_lider:hover {
+    animation-play-state: paused;
 }
 
 .dv_caixa {
     position: absolute;
+    display: flex;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
-    z-index: -1;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.8) 100%);
+    z-index: 10;
+    align-items: center;
 }
 
-section div div h1, p{
+.dv_infos {
     position: relative;
-    left: 20px;
-    width: max-content;
+    max-width: 600px;
+    width: 60%;
+    padding: 40px;
+    background-color: rgba(163, 79, 31, 0.8);
+    border-radius: 4px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    left: 50px;
+    animation: fadeIn 1s ease-out;
+}
+
+.dv_infos h1 {
     color: aliceblue;
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    white-space: nowrap;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.dv_infos h2 {
+    /* Suas propriedades existentes */
+    animation: piscaDestaque 1.5s infinite;
+}
+
+@keyframes piscaDestaque {
+
+    0%,
+    100% {
+        color: rgb(243, 243, 243);
+        text-shadow: 0 0 10px #ff6600;
+    }
+
+    50% {
+        color: #ff8838;
+        text-shadow: 0 0 15px #ff6600;
+    }
+}
+
+.dv_infos p {
+    color: aliceblue;
+    font-size: 1.4em;
+    line-height: 1.5;
+    margin-top: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    white-space: rap;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .dv_infos {
+        width: 80%;
+        margin: 0 auto;
+        padding: 25px;
+        left: -35px;
+        margin-top: -500px;
+    }
+
+    .dv_infos h1 {
+        font-size: 2em;
+        white-space: normal;
+    }
+
+    .dv_infos p {
+        font-size: 1.1em;
+    }
+}
+
+/* Container principal que vai agrupar os três elementos */
+.dvop_cursos-container {
+    position: absolute;
+    right: 25px;
+    bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* Espaço entre os elementos */
+    z-index: 2000;
+}
+
+/* Estilos individuais de cada elemento */
+.dvop_cursos {
+    width: 150px;
+    height: 90px;
+    color: white;
+    background-color: rgba(163, 79, 31, 0.85);
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    cursor: default;
+    animation: fadeIn 1s ease-out;
+    transition: .5s;
+    padding: 15px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.dvop_cursos:hover {
+    background-color: rgba(192, 99, 45, 0.85);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    animation: fadeIn 1s ease-out;
+    transition: all 0.2s ease-in-out;
+    z-index: 2000;
+    transform: scale(1.05);
+    /* Efeito de zoom */
+}
+
+/* Se quiser manter a animação que já existe */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Estilos do Carrossel */
+.carrossel-container {
+    position: relative;
+    top: 30px;
+    width: 100%;
+    height: 100vh;
+    background-color: #201f1f;
+    margin: 30px auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.carrossel {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    opacity: 20%;
+}
+
+.slide {
+    width: 130%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    opacity: 20%;
+    transition: transform 2s ease-in-out, opacity .8s ease-in-out;
+    z-index: 0;
+    /* Efeito de zoom */
+}
+
+.slide.ativo {
+    transform: scale(1.2);
+    opacity: 1;
+    z-index: 1;
+    animation: pulse 3s ease-in-out infinite;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    background-repeat: no-repeat;
+    opacity: 40%;
+}
+
+@media (max-width: 768px) {
+    .carrossel {
+        height: 250px;
+    }
+
+    .carrossel-container {
+        margin: 20px auto;
+        border-radius: 0;
+    }
+}
+
+.dvpsq_curso {
+    /* Mantenha suas propriedades atuais */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 98%;
+    height: 170px;
+    padding: 22px;
+    color-scheme: dark;
+    color: white;
+    background-color: #201f1f;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    animation: fadeIn 1s ease-out;
+    z-index: 1;
+}
+
+.input_curso {
+    position: relative;
+    top: 28%;
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 5px;
+    border: 2px solid #a34f1f;
+    background-color: rgba(163, 79, 31, 0.3);
+    color: white;
+    font-size: 1.2em;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Efeitos do placeholder */
+.input_curso::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+    font-style: italic;
+}
+
+.dvpsq_curso.typing:after {
+    opacity: 1;
+}
+
+.lk_buscar {
+    position: relative;
+    display: flex;
+    float: right;
+    justify-content: end;
+    align-self: center;
+    margin-right: 15px;
+    color: white;
+    width: max-content;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.lk_buscar:hover {
+    color: #a34f1f;
+    transition: all 0.2s ease-in-out;
+    text-shadow: 0 0 2px #ff6600;
+}
+
+
+
+/* Seção Depoimentos - Estilo Estratégia Militares */
+.depoimentos-militares {
+    background: linear-gradient(to bottom, #f9f9f9 0%, #fff 100%);
+    padding: 60px 20px;
+    border-top: 3px solid #a34f1f;
+    border-bottom: none;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cabecalho-depoimentos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0;
+}
+
+.cabecalho-depoimentos h2 {
+    color: #333;
+    font-size: 2.2em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.cabecalho-depoimentos h2 span {
+    color: #a34f1f;
+    font-weight: 700;
+}
+
+.cabecalho-depoimentos p {
+    color: #666;
+    font-size: 1.1em;
+    margin-top: 20px;
+}
+
+.carrossel-depoimentos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    width: 100%;
+    height: 100%;
+    justify-items: center;
+    align-items: center;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card-militar {
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    border-left: 4px solid #a34f1f;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin-top: 65px;
+    z-index: 5;
+}
+
+.card-militar:hover {
+    box-shadow: 0 10px 25px rgba(163, 79, 31, 0.15);
+}
+
+.foto-avaliacao {
+    padding: 20px 20px 10px;
+    text-align: center;
+    background-color: rgba(163, 79, 31, 0.8);
+}
+
+.foto-avaliacao img {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    margin: 0 auto;
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    opacity: 70%;
+    border: 3px solid rgba(163, 79, 31, 0.8);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+}
+
+.foto-avaliacao img:hover {
+    opacity: 100%;
+    position: relative;
+    top: 1px;
+    border-radius: 38%;
+    border: none;
+    transform: scale(1.2);
+    transition: all 0.5s ease-in-out;
+    z-index: 9;
+}
+
+.estrelas {
+    margin: 8px 0;
+    color: #ffc107;
+    font-size: 1.2em;
+    letter-spacing: 2px;
+    cursor: default;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 12px;
+}
+
+.texto-militar {
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.texto-militar:hover {
+    background-color: rgba(163, 79, 31, 0.1);
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.texto-militar h3 {
+    color: #222;
+    margin-bottom: 5px;
+    font-size: 1.3em;
+    cursor: default;
+}
+
+.texto-militar h3:hover {
+    color: #a34f1f;
+    font-weight: 700;
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.cargo {
+    color: #a34f1f;
+    font-weight: 600;
+    font-size: 0.9em;
+    margin-bottom: 15px;
+    display: block;
+    cursor: default;
+}
+
+.depoimento {
+    color: #555;
+    line-height: 1.6;
+    font-style: italic;
+    position: relative;
+    padding-left: 20px;
+}
+
+.depoimento::before {
+    content: "\201C";
+    /* Aspas simples */
+    font-family: "Times New Roman", Times, serif;
+    font-weight: bold;
+    font-style: italic;
+    /* Aspas duplas */
+    font-size: 3em;
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #a34f1f;
+    font-size: 2em;
+    line-height: 1;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .carrossel-depoimentos {
+        grid-template-columns: 1fr;
+    }
+
+    .cabecalho-depoimentos h2 {
+        font-size: 1.8em;
+    }
+}
+
+/* Carrossel de Vídeos do YouTube */
+.carrossel-videos {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+    text-align: center;
+    border-bottom: none;
+}
+
+.titulo-carrossel {
+    color: #d67e4b;
+    margin-bottom: 30px;
+    font-size: 2em;
+}
+
+.carrossel-container2 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carrossel-videos-inner {
+    position: relative;
+    height: 450px;
+    /* Mantenha a mesma altura do iframe */
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    max-width: 800px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.video-item {
+    min-width: 100%;
+    transition: transform 2s ease-in-out, opacity .8s ease-in-out;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+.video-item.ativo {
+    display: block;
+    opacity: 1;
+    transform: translateX(0);
+    z-index: 1;
+}
+
+.video-item.saindo {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+/* Para animação de voltar */
+.video-item.voltar {
+    transform: translateX(-100%);
+}
+
+.video-item.voltar.ativo {
+    transform: translateX(0);
+}
+
+.video-item.voltar.saindo {
+    transform: translateX(100%);
+}
+
+.video-item iframe {
+    width: 100%;
+    height: 450px;
+    border: none;
+}
+
+.carrossel-controle {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(163, 79, 31, 0.7);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.carrossel-controle:hover {
     background-color: #a34f1f;
+}
+
+.anterior {
+    left: 10px;
+}
+
+.proximo {
+    right: 10px;
+}
+
+.carrossel-indicadores {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.indicador {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.indicador.ativo {
+    background-color: #a34f1f;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .video-item iframe {
+        height: 300px;
+    }
+
+    .carrossel-controle {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* Seção Porto de Identidade - Classes Únicas */
+.militar-identidade-ancoragem {
+    background: linear-gradient(to bottom, rgba(163, 79, 31, 0.1) 70%, #201f1f 100%);
+    padding: 80px 0;
+    border-top: none;
+    border-bottom: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container-militar-principal {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.titulo-ancoragem-militar {
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.subtitulo-ancoragem {
+    color: white;
+    font-size: .9rem;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 50px;
+    line-height: 1.6;
+}
+
+.grupo-modulos-ancoragem {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.grupo-modulos-ancoragem, .destaques-finais-ancoragem{
+    cursor: default;
+}
+
+.modulo-conteudo-militar {
+    background: white;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 4px solid #a34f1f;
+}
+
+.modulo-conteudo-militar:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.titulo-modulo-militar {
+    color: #2d3748;
+    font-size: 1.3rem;
+    margin: 15px 0;
+    font-weight: 600;
+}
+
+.texto-modulo-militar {
+    color: #4a5568;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.icone-modulo-militar {
+    font-size: 2.5rem;
+    color: #a34f1f;
+}
+
+.destaques-finais-ancoragem {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+.item-destaque-militar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #f0f4f8;
+    padding: 15px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    color: #2d3748;
+}
+
+.simbolo-material-militar {
+    color: #a34f1f;
+    font-size: 1.5rem;
+    font-family: 'Material Symbols Outlined';
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .titulo-ancoragem-militar {
+        font-size: 2rem;
+    }
+
+    .grupo-modulos-ancoragem {
+        grid-template-columns: 1fr;
+    }
+
+    .destaques-finais-ancoragem {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
 }
