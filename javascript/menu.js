@@ -36,3 +36,22 @@ document.addEventListener('click', function(e) {
         });
     }
 });
+
+document.querySelector('.floating-button').addEventListener('mouseenter', function() {
+    this.style.animation = 'none'; // Pausa a animação de pulso
+    setTimeout(() => {
+        this.style.animation = 'pulse 3s infinite';
+    }, 500);
+});
+
+// Efeito de clique
+document.querySelector('.floating-button').addEventListener('click', function(e) {
+    e.preventDefault();
+    
+    // Efeito visual de clique
+    this.style.transform = 'scale(0.9)';
+    setTimeout(() => {
+        this.style.transform = 'scale(1)';
+        window.location.href = 'https://wa.me/5571900000000';
+    }, 200);
+});
