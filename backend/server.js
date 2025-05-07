@@ -1,12 +1,15 @@
-const express = require('express')
-const app = express()
-const authRoutes = require ('./routes/authRoutes')
+const express = require('express') // Importando o Express
+const app = express() // Criando uma instância do Express
+const authRoutes = require ('./routes/authRoutes') // Importando as rotas de autenticação
+const cors = require('cors') // Importando o CORS
 
-app.use(express.json())
-app.use('/api/auth', authRoutes)
+app.use(cors()) // Usando o middleware CORS para permitir requisições de diferentes origens
+app.use(express.json()) // Middleware para analisar o corpo das requisições em JSON
+app.use('/api/auth', authRoutes) // Usando as rotas de autenticação
+app.use(express.urlencoded({ extended: true })) // Middleware para analisar o corpo das requisições URL-encoded
 
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 3000 // Definindo a porta do servidor
 
-app.listen(PORT, () =>{
-    console.log(`Servidor rodando na porta ${PORT}`)
+app.listen(PORT, () =>{ // Iniciando o servidor
+    console.log(`Servidor rodando na porta ${PORT}`) // Iniciando o servidor e exibindo a porta no console
 }) 
