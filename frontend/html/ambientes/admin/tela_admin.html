@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do Administrador</title>
+    <link rel="stylesheet" href="/frontend/css/ambientes/admin/tela_admin.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">Painel Admin</div>
+
+        <div class="nav-itens">
+
+            <!-- Usuários -->
+            <div class="nav-itens suspensa">
+                <span>Usuários</span>
+                <div class="conteudo-suspenso">
+                    <a href="/admin/usuarios" class="item-suspenso">Gerenciar Usuários</a>
+                    <a href="/admin/usuarios/novo" class="item-suspenso">Adicionar Novo</a>
+                </div>
+            </div>
+
+            <!-- Cursos -->
+            <div class="nav-itens suspensa">
+                <span>Cursos</span>
+                <div class="conteudo-suspenso">
+                    <a href="/admin/cursos" class="item-suspenso">Listar Cursos</a>
+                    <a href="/admin/cursos/novo" class="item-suspenso">Criar Curso</a>
+                </div>
+            </div>
+
+            <!-- Módulos -->
+            <div class="nav-itens suspensa">
+                <span>Módulos</span>
+                <div class="conteudo-suspenso">
+                    <a href="/admin/modulos" class="item-suspenso">Listar Módulos</a>
+                    <a href="/admin/modulos/novo" class="item-suspenso">Criar Módulo</a>
+                </div>
+            </div>
+
+            <!-- Relatórios -->
+            <div class="nav-itens suspensa">
+                <span>Relatórios</span>
+                <div class="conteudo-suspenso">
+                    <a href="/admin/relatorios/progresso" class="item-suspenso">Progresso dos Alunos</a>
+                    <a href="/admin/relatorios/cursos" class="item-suspenso">Engajamento de Cursos</a>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+    <div class="conteudo-principal">
+        <h1>Bem-vindo ao Painel do Administrador!</h1>
+        <p>Use o menu acima para gerenciar usuários, cursos, módulos e acessar relatórios detalhados da plataforma.</p>
+    </div>
+</body>
+
+</html>
