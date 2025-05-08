@@ -18,12 +18,12 @@ const usuario = await prisma.usuario.create({
         nome,
         email,
         senha: hashedSenha,
-        tipo,
+        tipo: 'ALUNO',
         planoId: 1, // Definindo o plano padrão como 1
     }
 })
 
-return { id: usuario.id, nome: usuario.nome, tipo: usuario.tipo}
+return { id: usuario.id, nome: usuario.nome, tipo: usuario.tipo, planoId: usuario.planoId}
 }
 
 const loginUser = async({email, senha}) => {
@@ -37,7 +37,7 @@ const loginUser = async({email, senha}) => {
     {
         userId: usuario.id,
         email: usuario.email,
-        tipo: usuario.tipo        
+        tipo: usuario.tipo   
     },
     process.env.JWT_SECRET,
     {expiresIn: '2h'}
