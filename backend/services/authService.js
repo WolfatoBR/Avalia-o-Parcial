@@ -18,7 +18,7 @@ const usuario = await prisma.usuario.create({
         nome,
         email,
         senha: hashedSenha,
-        tipo: 'ALUNO',
+        tipo,
         planoId: 1, // Definindo o plano padrão como 1
     }
 })
