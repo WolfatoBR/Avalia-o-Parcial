@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(typeWriter, 1000);
 });
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const videos = document.querySelectorAll('.video-item');
     const btnAnterior = document.querySelector('.anterior');
     const btnProximo = document.querySelector('.proximo');
@@ -89,49 +89,49 @@ document.addEventListener('DOMContentLoaded', function() {
     function showVideo(index, direction = 'next') {
         if (isAnimating) return;
         isAnimating = true;
-        
+
         const currentVideo = document.querySelector('.video-item.ativo');
         const nextVideo = videos[index];
-        
+
         // Configura direção da animação
         nextVideo.classList.add(direction === 'next' ? 'proximo' : 'voltar');
-        
+
         // Remove classes de animação
         currentVideo.classList.remove('proximo', 'voltar');
         nextVideo.classList.remove('proximo', 'voltar');
-        
+
         // Inicia animação
         currentVideo.classList.add('saindo');
         nextVideo.classList.add('ativo');
-        
+
         // Atualiza indicadores
         indicadores.forEach(ind => ind.classList.remove('ativo'));
         indicadores[index].classList.add('ativo');
-        
+
         // Finaliza animação
         setTimeout(() => {
             currentVideo.classList.remove('ativo', 'saindo');
             isAnimating = false;
         }, 600);
-        
+
         currentIndex = index;
     }
-    
+
     function nextVideo() {
         const newIndex = (currentIndex + 1) % videos.length;
         showVideo(newIndex, 'next');
     }
-    
+
     function prevVideo() {
         const newIndex = (currentIndex - 1 + videos.length) % videos.length;
         showVideo(newIndex, 'prev');
     }
-    
+
     btnProximo.addEventListener('click', nextVideo);
     btnAnterior.addEventListener('click', prevVideo);
-    
+
     indicadores.forEach(indicador => {
-        indicador.addEventListener('click', function() {
+        indicador.addEventListener('click', function () {
             const newIndex = parseInt(this.getAttribute('data-index'));
             const direction = newIndex > currentIndex ? 'next' : 'prev';
             showVideo(newIndex, direction);

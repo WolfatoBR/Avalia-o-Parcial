@@ -24,9 +24,8 @@
     <!-- Botão para abrir/fechar o menu (mobile) -->
     <button class="menu-toggle" aria-label="Abrir menu">☰</button>
 
-    <div class="chama-menu">
-    </div>
-    <!-- Para chamar o MENU SUPERIOR-->
+    <!-- Para chamar o MENU SUPERIOR -->
+    <div class="chama-menu"></div>
     <script>
         fetch('../html/menu_sup.html')
             .then(response => response.text())
@@ -34,7 +33,7 @@
                 document.querySelector('.chama-menu').innerHTML = html;
             });
     </script>
-    <!-- /Para chamar o MENU SUPERIOR-->
+    <!-- Para chamar o MENU SUPERIOR -->
 
     <!-- Botão do Zap -->
     <div class="floating-button contato" onclick="window.location.href='https://wa.me/5571900000000'">
@@ -170,61 +169,46 @@
             <div class="carrossel-videos-inner">
                 <!-- Vídeo 1 -->
                 <div class="video-item ativo">
-                    <iframe 
-                        src="https://www.youtube.com/embed/9fNHAD7ZDL4?rel=0&modestbranding=1" 
-                        title="Conheça nosso parceiro no YouTube" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        referrerpolicy="strict-origin-when-cross-origin" 
-                        allowfullscreen>
+                    <iframe src="https://www.youtube.com/embed/9fNHAD7ZDL4?rel=0&modestbranding=1"
+                        title="Conheça nosso parceiro no YouTube" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
                     </iframe>
                 </div>
 
                 <!-- Vídeo 2 -->
                 <div class="video-item">
-                    <iframe 
-                        src="https://www.youtube.com/embed/nsFBDCR1vLc?list=PLEAQjGRLyR4vMyJHv1TNfJR1fNJ408OpC" 
-                        title="Conheça nosso parceiro no YouTube" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        referrerpolicy="strict-origin-when-cross-origin" 
-                        allowfullscreen>
+                    <iframe src="https://www.youtube.com/embed/nsFBDCR1vLc?list=PLEAQjGRLyR4vMyJHv1TNfJR1fNJ408OpC"
+                        title="Conheça nosso parceiro no YouTube" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
                     </iframe>
                 </div>
 
                 <!-- Vídeo 3 -->
                 <div class="video-item">
-                    <iframe 
-                        src="https://www.youtube.com/embed/cTQHrNOlAUo?si=VSGVjo4jZ4cMoc8u" 
-                        title="Conheça nosso parceiro no YouTube" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        referrerpolicy="strict-origin-when-cross-origin" 
-                        allowfullscreen>
+                    <iframe src="https://www.youtube.com/embed/cTQHrNOlAUo?si=VSGVjo4jZ4cMoc8u"
+                        title="Conheça nosso parceiro no YouTube" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
                     </iframe>
                 </div>
 
                 <!-- Vídeo 4 -->
                 <div class="video-item">
-                    <iframe 
-                        src="https://www.youtube.com/embed/EuQyOyN6keA?si=-1bTpb9fwDNPBp21" 
-                        title="Conheça nosso parceiro no YouTube" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        referrerpolicy="strict-origin-when-cross-origin" 
-                        allowfullscreen>
+                    <iframe src="https://www.youtube.com/embed/EuQyOyN6keA?si=-1bTpb9fwDNPBp21"
+                        title="Conheça nosso parceiro no YouTube" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
                     </iframe>
                 </div>
 
                 <!-- Vídeo 5 -->
                 <div class="video-item">
-                    <iframe 
-                        src="https://www.youtube.com/embed/Sy8i9j9ZHiE?si=YqxMWwWvsYgZsoy-" 
-                        title="Conheça nosso parceiro no YouTube" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        referrerpolicy="strict-origin-when-cross-origin" 
-                        allowfullscreen>
+                    <iframe src="https://www.youtube.com/embed/Sy8i9j9ZHiE?si=YqxMWwWvsYgZsoy-"
+                        title="Conheça nosso parceiro no YouTube" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
                     </iframe>
                 </div>
             </div>
@@ -250,66 +234,76 @@
     <section class="militar-identidade-ancoragem">
         <div class="container-militar-principal">
             <h2 class="titulo-ancoragem-militar">Por que escolher o Instituto CoreClever?</h2>
-            <p class="subtitulo-ancoragem">O curso que mais aprova e classifica nas escolas militares. Sua preparação será direcionada, personalizada e focada na Escola Militar que você deseja ingressar. O curso que é objeto de desejos de muitos está ao seu alcance.</p>
-            
+            <p class="subtitulo-ancoragem">O curso que mais aprova e classifica nas escolas militares. Sua preparação
+                será direcionada, personalizada e focada na Escola Militar que você deseja ingressar. O curso que é
+                objeto de desejos de muitos está ao seu alcance.</p>
+
             <div class="grupo-modulos-ancoragem">
                 <!-- Módulo 1 -->
                 <div class="modulo-conteudo-militar">
                     <div class="icone-modulo-militar"><span class="material-symbols-outlined">
-                        rss_feed
+                            rss_feed
                         </span></div>
                     <h3 class="titulo-modulo-militar">Conteúdo 100% digital</h3>
-                    <p class="texto-modulo-militar">Livros Digitais Interativos, Videoaulas, Banco de Questões, Planejamento de Estudos e todos os recursos de estudos totalmente digitais ao seu alcance.</p>
+                    <p class="texto-modulo-militar">Livros Digitais Interativos, Videoaulas, Banco de Questões,
+                        Planejamento de Estudos e todos os recursos de estudos totalmente digitais ao seu alcance.</p>
                 </div>
-                
+
                 <!-- Módulo 2 -->
                 <div class="modulo-conteudo-militar">
                     <div class="icone-modulo-militar"><span class="material-symbols-outlined">
-                        check_circle
+                            check_circle
                         </span></div>
                     <h3 class="titulo-modulo-militar">Completo, atualizado e confiável</h3>
-                    <p class="texto-modulo-militar">Um conteúdo exclusivo e de alta qualidade, atualizado constantemente por nossos professores. É garantido: temos o melhor material de ensino!</p>
+                    <p class="texto-modulo-militar">Um conteúdo exclusivo e de alta qualidade, atualizado constantemente
+                        por nossos professores. É garantido: temos o melhor material de ensino!</p>
                 </div>
-                
+
                 <!-- Módulo 3 -->
                 <div class="modulo-conteudo-militar">
                     <div class="icone-modulo-militar"><span class="material-symbols-outlined">
-                        forum
+                            forum
                         </span></div>
                     <h3 class="titulo-modulo-militar">Questões comentadas de verdade</h3>
-                    <p class="texto-modulo-militar">Acesse um banco de questões comentadas alternativa por alternativa, em texto e vídeo. A solução completa de estudo por questões.</p>
+                    <p class="texto-modulo-militar">Acesse um banco de questões comentadas alternativa por alternativa,
+                        em texto e vídeo. A solução completa de estudo por questões.</p>
                 </div>
             </div>
-            
+
             <div class="grupo-modulos-ancoragem">
                 <!-- Módulo 4 -->
                 <div class="modulo-conteudo-militar">
                     <div class="icone-modulo-militar"><span class="material-symbols-outlined">
-                        description
+                            description
                         </span></div>
                     <h3 class="titulo-modulo-militar">Listas e simulados personalizados</h3>
-                    <p class="texto-modulo-militar">Otimize sua performance e entenda a dinâmica da sua prova com listas e simulados de acordo com o seu objetivo. É a certeza de que você estará pronto no dia da prova!</p>
+                    <p class="texto-modulo-militar">Otimize sua performance e entenda a dinâmica da sua prova com listas
+                        e simulados de acordo com o seu objetivo. É a certeza de que você estará pronto no dia da prova!
+                    </p>
                 </div>
-                
+
                 <!-- Módulo 5 -->
                 <div class="modulo-conteudo-militar">
                     <div class="icone-modulo-militar"><span class="material-symbols-outlined">
-                        stylus_note
+                            stylus_note
                         </span></div>
                     <h3 class="titulo-modulo-militar">Redações ilimitadas</h3>
-                    <p class="texto-modulo-militar">Envie quantas redações quiser e todas elas serão corrigidas por nós dentro do mesmo padrão estabelecido por sua prova, dando a você a oportunidade de melhorar continuamente.</p>
+                    <p class="texto-modulo-militar">Envie quantas redações quiser e todas elas serão corrigidas por nós
+                        dentro do mesmo padrão estabelecido por sua prova, dando a você a oportunidade de melhorar
+                        continuamente.</p>
                 </div>
-                
+
                 <!-- Módulo 6 -->
                 <div class="modulo-conteudo-militar">
                     <div class="icone-modulo-militar"><span class="material-symbols-outlined">
-                        help
+                            help
                         </span></div>
                     <h3 class="titulo-modulo-militar">Fórum de dúvidas 24h por dia</h3>
-                    <p class="texto-modulo-militar">Envie todas as dúvidas que você tiver durante seus estudos para nosso time de professores.</p>
+                    <p class="texto-modulo-militar">Envie todas as dúvidas que você tiver durante seus estudos para
+                        nosso time de professores.</p>
                 </div>
             </div>
-            
+
             <div class="destaques-finais-ancoragem">
                 <div class="item-destaque-militar">
                     <span class="simbolo-material-militar">schedule</span>
