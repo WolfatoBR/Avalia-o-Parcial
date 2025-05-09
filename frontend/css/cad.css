@@ -4,6 +4,7 @@ body {
     padding: 0;
     background-color: #f4f4f9;
     color: #333;
+    transition: background-color 0.3s ease; /* Transição suave */
 }
 
 .cad-container {
@@ -13,15 +14,23 @@ body {
     background: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave */
+}
+
+.cad-container:hover {
+    transform: translateY(-5px); /* Efeito de elevação */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2); /* Sombras mais intensas ao passar o mouse */
 }
 
 .back a {
     text-decoration: none;
     color: #007bff;
     font-size: 14px;
+    transition: color 0.3s ease; /* Transição suave para a cor */
 }
 
 .back a:hover {
+    color: #0056b3; /* Cor mais intensa ao passar o mouse */
     text-decoration: underline;
 }
 
@@ -29,6 +38,8 @@ body {
     text-align: center;
     margin-bottom: 20px;
     color: #444;
+    font-size: 1.8em;
+    font-weight: bold;
 }
 
 .form-group {
@@ -48,16 +59,14 @@ body {
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 14px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Efeito suave */
 }
 
 .form-group input:focus,
 .form-group select:focus {
     border-color: #007bff;
     outline: none;
-}
-
-.form-group input[type="password"] {
-    margin-top: 10px;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3); /* Efeito de foco com sombra */
 }
 
 .cad-form button {
@@ -69,8 +78,30 @@ body {
     border-radius: 4px;
     font-size: 16px;
     cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transições suaves */
 }
 
 .cad-form button:hover {
     background-color: #0056b3;
+    transform: translateY(-2px); /* Efeito de elevação */
+}
+
+.cad-form button:active {
+    transform: translateY(2px); /* Efeito de clique */
+}
+
+@media (max-width: 768px) {
+    .cad-container {
+        padding: 15px;
+        max-width: 100%;
+    }
+
+    .cad-form h2 {
+        font-size: 1.6em;
+    }
+
+    .form-group input,
+    .form-group select {
+        font-size: 13px;
+    }
 }

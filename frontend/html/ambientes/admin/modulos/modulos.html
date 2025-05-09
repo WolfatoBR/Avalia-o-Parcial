@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gerenciar Módulos</title>
+    <link rel="stylesheet" href="/frontend/css/ambientes/admin/modulos/modulos.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">Painel Admin</div>
+        <a href="/admin">Início</a>
+    </nav>
+
+    <div class="conteudo-principal">
+        <h1>Lista de Módulos</h1>
+        <a href="/admin/modulos/novo" class="botao">Criar Novo Módulo</a>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome do Módulo</th>
+                    <th>Curso Relacionado</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Exemplo estático, substitua por renderização dinâmica -->
+                <tr>
+                    <td>1</td>
+                    <td>Introdução ao HTML</td>
+                    <td>Desenvolvimento Web</td>
+                    <td>
+                        <a href="/admin/modulos/1/editar">Editar</a> |
+                        <a href="/admin/modulos/1/remover">Remover</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

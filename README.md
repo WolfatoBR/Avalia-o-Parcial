@@ -36,3 +36,8 @@ Apos editar o 'schema.prisma' e o arquivo '.env'.
 4. Teste com o script test.js
 
 5. Na pasta que foi feito todo o processo, utilize o 'npx prisma studio'
+
+6. Para usar/testar o server,js (instale os seguintes comandos na pasta backend)
+- npm install bcrypt
+- npm install jsonwebtoken
+- npm install dotenv 
