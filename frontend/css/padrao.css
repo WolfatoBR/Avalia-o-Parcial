@@ -3,7 +3,9 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: Roboto, sans-serif;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
     list-style: none;
     text-decoration: none;
     box-sizing: border-box;
@@ -11,6 +13,4 @@
 
 body{
     background-color: #863a0d;
-    font-family: Arial, sans-serif;
-    
 }
