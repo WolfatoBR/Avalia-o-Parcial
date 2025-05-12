@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Gerenciar Módulos</title>
     <link rel="stylesheet" href="/frontend/css/ambientes/admin/modulos/modulos.css">
+    <script src="../../../../../javascript/admin/modulos.js" defer></script>
 </head>
 
 <body>
@@ -15,7 +16,7 @@
 
     <div class="conteudo-principal">
         <h1>Lista de Módulos</h1>
-        <a href="/admin/modulos/novo" class="botao">Criar Novo Módulo</a>
+        <button id ="botaoCriarModulo" class="botao">Criar Novo Módulo</button>
 
         <table>
             <thead>
@@ -26,20 +27,45 @@
                     <th>Ações</th>
                 </tr>
             </thead>
-            <tbody>
-                <!-- Exemplo estático, substitua por renderização dinâmica -->
-                <tr>
-                    <td>1</td>
-                    <td>Introdução ao HTML</td>
-                    <td>Desenvolvimento Web</td>
-                    <td>
-                        <a href="/admin/modulos/1/editar">Editar</a> |
-                        <a href="/admin/modulos/1/remover">Remover</a>
-                    </td>
-                </tr>
+            <tbody id = "modulos_list">
+                
             </tbody>
         </table>
     </div>
+        <!-- Modal de Criar Novo Módulo -->
+        <div id="modalCriarModulo" class="modal">
+            <div class="modal-conteudo">
+                <span class="fechar" id="fecharModal">&times;</span>
+                <h2>Criar Novo Módulo</h2>
+                <form id="formCriarModulo">
+                    <label for="nomeModulo">Nome do Módulo:</label>
+                    <input type="text" id="nomeModulo" required>
+    
+                    <label for="cursoModulo">Curso Relacionado:</label>
+                    <select id="cursoModulo" required> </select>
+    
+                    <button type="submit">Criar Módulo</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Modal de Editar Módulo -->
+        <div id="modalEditarModulo" class="modal">
+            <div class="modal-conteudo">
+                <span class="fechar" id="fecharModalEditar">&times;</span>
+                <h2>Editar Módulo</h2>
+                <form id="formEditarModulo">
+                    <input type ="hidden" id="editarModuloId">
+                    <label for="editarNomeModulo">Nome do Módulo:</label>
+                    <input type="text" id="editarNomeModulo" required>
+    
+                    <label for="editarCursoModulo">Curso Relacionado:</label>
+                    <select id="editarCursoModulo" required> </select>
+    
+                    <button type="submit">Salvar</button>
+                </form>
+            </div>
+        </div>       
 </body>
 
 </html>
