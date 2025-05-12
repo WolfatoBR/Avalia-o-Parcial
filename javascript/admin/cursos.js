@@ -42,7 +42,7 @@ async function carregarCategoria(selectElement){
     try{
         const response = await fetch('http://127.0.0.1:3000/api/categoria');
         const categorias = await response.json();
-        preencherSelect(selectElement,cursos, 'Selecione uma categoria');
+        preencherSelect(selectElement,categorias, 'Selecione uma categoria');
     }catch (err){
         console.error('Erro ao carregar categorias: ', err)
     }
@@ -74,3 +74,102 @@ function preencherModalEdicao(curso) {
 
     abrirModal('modalEditarCurso');
 }
+
+document.addEventListener('DOMContentLoaded',() => {
+    const cursosList = document.getElementById('cursos_list');
+    const categoriaCursoSelect = document.getElementById('categoriaCurso');
+
+    carregarCategoria(categoriaCursoSelect)
+    carregarCursos(cursosList)
+
+    document.getElementById('botaoCriarCurso').addEventListener('click', () => abrirModal('modalCriarCurso'));
+    document.getElementById('fecharModal').addEventListener('click', () => fecharModal('modalCriarCurso'));
+    document.getElementById('fecharModalEditar').addEventListener('click', () => fecharModal('modalEditarCurso'));
+
+    window.addEventListener('click', (e) => {
+        const modais = ['modalCriarCurso', 'modalEditarCurso', 'modalConfirmarExclusao'];
+        modais.forEach(id =>{
+            const modal = document.getElementById(id)
+            if (e.target === modal) modal.style.display = 'none'
+        })
+    })
+
+    document.getElementById('formCriarCurso').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const nome = document.getElementById('nomeCurso').value;
+        const categoriaId = parseInt(categoriaCursoSelect.value);
+
+        try{
+            const response = await fetch('http://127.0.0.1:3000/api/cursos', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    titulo: nome, 
+                    descricao,
+                    cargaHoraria,
+                    categoriaId
+                })
+            })
+            await response.json();
+            fecharModal('modalCriarCurso')
+        } catch (err){
+            console.error('Erro ao criar módulo:',err)
+        }
+    });
+    
+    document.getElementById('formEditarCurso').addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const id = document.getElementById('editarCursoId').value;
+        const titulo = document.getElementById('editarNomeCurso').value;
+        const categoriaId = parseInt(document.getElementById('editarCategoriaCurso').value);
+        const descricao = document.getElementById('descricaoCurso')
+
+        try{
+            await fetch(`http://127.0.0.1:3000/api/cursos/${id}`, {
+                method: 'PUT',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    titulo, 
+                    categoriaId, 
+                    cargaHoraria, 
+                    descricao})
+            });
+            fecharModal('modalEditarCurso');
+            carregarCursos(cursosList);
+        }catch (err) {
+            console.error('Erro ao editar curso:', err);
+        }
+    });
+
+    document.getElementById('cancelarExclusao').addEventListener('click', () => fecharModal('modalConfirmarExclusao'));
+
+    document.getElementById('confirmarExclusao').addEventListener('click', async () => {
+        const id = document.getElementById('cursoIdParaExcluir').value;
+        try {
+            await fetch(`http://127.0.0.1:3000/api/modulos/${id}`, { method: 'DELETE' });
+            fecharModal('modalConfirmarExclusao');
+            carregarCursos(cursosList)
+        } catch (err){
+            console.error('Erro ao excluir curso:', err);
+        }
+    })
+    cursosList.addEventListener('click', async (e) => {
+        e.preventDefault();
+        const id = e.target.dataset.id;
+        
+        if (!id) return;
+
+        if(e.target.classList.contains('btn-editar-curso')){
+            try{
+                const curso = await buscarCursoPorId(id);
+                preencherModalEdicao(curso)
+            }catch (err) {
+                console.error('Erro ao buscar curso para editar:', err);
+            }
+        }
+        if (e.target.classList.contains('btn-remover-curso')){
+            abrirModalExcluir(id);
+        }
+    })
+})
