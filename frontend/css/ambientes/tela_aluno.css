@@ -8,12 +8,14 @@
 
 body {
     background-color: #f5f5f5;
-    padding-top: 70px; /* Espaço para a navbar fixa */
+    padding-top: 70px;
+    /* Espaço para a navbar fixa */
 }
 
 /* Barra de Navegação com Nova Paleta */
 .navbar {
-    background-color: rgba(0, 0, 0, 0.9); /* Preto com transparência */
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Preto com transparência */
     color: aliceblue;
     display: flex;
     justify-content: space-between;
@@ -24,7 +26,8 @@ body {
     width: 100%;
     top: 0;
     z-index: 1000;
-    border-bottom: 2px solid #a34f1f; /* Cor laranja do carrossel */
+    border-bottom: 2px solid #a34f1f;
+    /* Cor laranja do carrossel */
 }
 
 .logo {
@@ -39,7 +42,8 @@ body {
     align-items: center;
 }
 
-.nav-item, .suspensa {
+.nav-item,
+.suspensa {
     position: relative;
     cursor: pointer;
     padding: 10px 0;
@@ -47,8 +51,10 @@ body {
     color: aliceblue;
 }
 
-.nav-item:hover, .suspensa:hover {
-    color: #a34f1f; /* Cor laranja do carrossel */
+.nav-item:hover,
+.suspensa:hover {
+    color: #a34f1f;
+    /* Cor laranja do carrossel */
 }
 
 /* Menu Suspenso - Estilo com Nova Paleta */
@@ -63,7 +69,8 @@ body {
     background-color: rgba(0, 0, 0, 0.95);
     min-width: 250px;
     max-width: 300px;
-    box-shadow: 0 8px 16px rgba(163, 79, 31, 0.3); /* Sombra laranja */
+    box-shadow: 0 8px 16px rgba(163, 79, 31, 0.3);
+    /* Sombra laranja */
     z-index: 1;
     border-radius: 5px;
     top: 100%;
@@ -72,7 +79,7 @@ body {
     border: 1px solid #a34f1f;
 }
 
-.nav-itens > .suspensa:last-child .conteudo-suspenso {
+.nav-itens>.suspensa:last-child .conteudo-suspenso {
     right: 0;
     left: auto;
 }
@@ -109,19 +116,22 @@ body {
 
 .barra-progresso {
     height: 10px;
-    background-color: #a34f1f; /* Cor laranja do carrossel */
+    background-color: #a34f1f;
+    /* Cor laranja do carrossel */
     border-radius: 8px;
-    width: 30%;
+    width: 10%;
     position: relative;
     transition: width 0.5s ease;
 }
 
 .texto-progresso {
-    position: absolute;
-    right: -40px;
-    top: -5px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 14px;
     color: aliceblue;
+    margin-left: 10px;
 }
 
 /* Notificação - Estilo com Nova Paleta */
@@ -150,7 +160,7 @@ body {
         flex-direction: column;
         padding: 15px;
     }
-    
+
     .nav-itens {
         flex-direction: column;
         gap: 15px;
@@ -158,12 +168,12 @@ body {
         margin-top: 15px;
         align-items: flex-start;
     }
-    
+
     .progresso-container {
         width: 100%;
         margin: 10px 0;
     }
-    
+
     .conteudo-suspenso {
         position: static;
         width: 100%;
@@ -171,11 +181,11 @@ body {
         right: auto;
         left: auto;
     }
-    
+
     .suspensa {
         width: 100%;
     }
-    
+
     .texto-progresso {
         right: -30px;
     }
