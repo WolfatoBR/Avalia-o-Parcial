@@ -180,3 +180,24 @@ body {
         right: -30px;
     }
 }
+
+
+/* Rolagem suave para links internos */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Remover sublinhado de todos os links */
+.navbar a,
+.navbar .logo a,
+.conteudo-suspenso a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Estilo específico para o link da logo */
+.logo a {
+    font-size: 24px;
+    font-weight: bold;
+    color: aliceblue;
+}

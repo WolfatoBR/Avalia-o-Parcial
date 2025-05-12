@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gerenciar Cursos</title>
+    <link rel="stylesheet" href="/frontend/css/ambientes/admin/cursos/cursos.css">
+    <script src="../../../../../javascript/admin/cursos.js" defer></script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="/frontend/html/ambientes/admin/tela_admin.html" class="logo">Painel Admin</a>
+    </nav>
+
+    <div class="conteudo-principal">
+        <h1>Lista de Cursos</h1>
+        <button id ="botaoCriarCurso" class="botao">Criar Novo Curso</button>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome do Curso</th>
+                    <th>Categoria</th>
+                    <th>Carga Horaria</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id = "cursos_list">
+                
+            </tbody>
+        </table>
+    </div>
+        <!-- Modal de Criar Novo Curso -->
+        <div id="modalCriarCurso" class="modal">
+            <div class="modal-conteudo">
+                <span class="fechar" id="fecharModal">&times;</span>
+                <h2>Criar Novo Curso</h2>
+                <form id="formCriarCurso">
+                    <label for="nomeCurso">Nome do Curso:</label>
+                    <input type="text" id="nomeCurso" required>
+    
+                    <label for="categoriaCurso">Categoria:</label>
+                    <select id="categoriaCurso" required> </select>
+                    
+                    <label for="cargaHorariaCurso">Carga Horaria:</label>
+                    <input type="text" id="cargaHorariaCurso" requried> 
+
+                    <button type="submit">Criar Curso</button>
+                </form>
+            </div>
+        </div>
+
+ <!-- Modal de Editar Módulo -->
+    <div id="modalEditarCurso" class="modal">
+        <div class="modal-conteudo">
+            <span class="fechar" id="fecharModalEditar">&times;</span>
+            <h2>Editar Curso</h2>
+            <form id="formEditarCurso">
+                <input type ="hidden" id="editarCursoId">
+                <label for="editarNomeCurso">Nome do Curso:</label>
+                <input type="text" id="editarNomeCurso">
+    
+                <label for="editarCategoriaCurso">Categoria:</label>
+                <select id="editarCategoriaCurso"> </select>
+
+                <label for="editarCargaHorariaCurso">Carga Horaria:</label>
+                <input type="text" id="editarCargaHorariaCurso">
+
+                <button type="submit">Salvar</button>
+            </form>
+        </div>
+    </div>  
+<!-- Modal de Confirmação de Exclusão -->
+<div id="modalConfirmarExclusao" class="modal">
+    <div class="modal-conteudo">
+        <h2>Confirmar Exclusão</h2>
+        <p>Tem certeza que deseja excluir este curso?</p>
+        <input type="hidden" id="cursoIdParaExcluir">
+        <button id="confirmarExclusao" class="botao confirmarExclusao">Sim, excluir</button>
+        <button id="cancelarExclusao" class="botao">Cancelar</button>
+    </div>
+</div>     
+</body>
+
+</html>
