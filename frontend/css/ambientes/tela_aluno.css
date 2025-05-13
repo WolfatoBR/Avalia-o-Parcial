@@ -190,3 +190,67 @@ body {
         right: -30px;
     }
 }
+
+.menu_lateral {
+    position: relative;
+    display: flex;
+    float: left;
+    width: 33%;
+    height: 100vh;
+    padding-top: 3px;
+
+
+
+    background-color: #a34f1f;
+}
+
+nav ul li .txt_link {
+    position: absolute;
+    list-style-type: none;
+    text-align: none;
+
+}
+
+.icone_menu-lateral {
+    background-color: springgreen;
+}
+
+.contato_email {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    float: right;
+    margin-top: 5px;
+    margin-right: 15px;
+    display: flex;
+
+    background-color: violet;
+}
+
+nav ul li span,
+.icone_user {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    height: max-content;
+    border-radius: 50%;
+
+    border: 2px solid yellow;
+}
+
+.lista-video_menu-lateral {
+    position: relative;
+    background-color: aqua;
+    z-index: 10;
+}
+
+nav ul li iframe {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+
+    padding: 5%;
+}
