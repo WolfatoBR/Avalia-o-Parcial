@@ -101,7 +101,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const response = await fetch('http://127.0.0.1:3000/api/modulos', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ titulo: nome, cursoId, ordem: 1 })
+                body: JSON.stringify({ 
+                    titulo: nome, 
+                    cursoId, 
+                    ordem: 1 
+                })
             });
             await response.json();
             fecharModal('modalCriarModulo');
