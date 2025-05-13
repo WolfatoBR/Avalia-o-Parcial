@@ -1,122 +1,167 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Area do Aluno</title>
-    <link rel="stylesheet" href="/frontend/css/ambientes/tela_aluno.css">
-    <!-- Ícones do Google  -->
+    <title>Área do Aluno | Instituto CoreClever</title>
+    <!-- Ícones do Google -->
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=account_circle" />
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="/frontend/css/ambientes/tela_aluno.css">
 </head>
 
 <body>
+    <!-- Barra de Navegação Superior -->
     <nav class="navbar">
-        <div class="logo">Área do Aluno</div>
-
-        <div class="nav-itens">
-            <!-- Turma e videos -->
-            <div class="nav-itens suspensa">
-                <span>Turma</span>
-                <div class="conteudo-suspenso">
-                    <a href="#" class="item-suspenso">Negócios</a>
-                    <a href="#" class="item-suspenso">Empreendedorismo</a>
-                    <a href="#" class="item-suspenso">Desenvolvimento de Jogos e Software</a>
-                </div>
+        <div class="navbar-container">
+            <div class="logo">
+                <span class="material-symbols-outlined">school</span>
+                <h1>Área do Aluno</h1>
             </div>
 
-            <!-- Progresso -->
-            <div class="nav-item">
-                <div style="display: flex; align-items: center;">
-                    <div class="progresso-container">
-                        <div class="barra-progresso">
-                        </div>
+            <div class="nav-itens">
+                <!-- Menu Turma -->
+                <div class="nav-dropdown">
+                    <button class="dropdown-btn">
+                        <span class="material-symbols-outlined">group</span>
+                        Turma
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="#"><span class="material-symbols-outlined">business_center</span> Negócios</a>
+                        <a href="#"><span class="material-symbols-outlined">rocket_launch</span> Empreendedorismo</a>
+                        <a href="#"><span class="material-symbols-outlined">code</span> Desenvolvimento</a>
                     </div>
-                    <span class="texto-progresso">30%</span>
                 </div>
-            </div>
 
-            <!-- Caixa de Entrada -->
-            <div class="nav-itens suspensa">
-                <span>Caixa de Entrada</span>
-                <span class="notificacao">3</span>
-                <div class="conteudo-suspenso">
-                    <a href="#" class="item-suspenso">Prof. Silva: Correção da tarefa</a>
-                    <a href="#" class="item-suspenso">Prof. Souza: Aula extra marcada</a>
-                    <a href="#" class="item-suspenso">Plataforma: Atualização do sistema</a>
+                <!-- Barra de Progresso -->
+                <div class="progress-container">
+                    <div class="progress-info">
+                        <span class="material-symbols-outlined">trending_up</span>
+                        <span class="progress-text">Seu Progresso</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 30%;"></div>
+                    </div>
+                    <span class="progress-percent">30%</span>
                 </div>
-            </div>
 
-            <!-- Area de Contato -->
-            <div class="nav-itens suspensa">
-                <span>Contato</span>
-                <div class="conteudo-suspenso">
-                    <a href="#" class="item-suspenso">Fale com o Professor</a>
-                    <a href="#" class="item-suspenso">Suporte da Plataforma</a>
-                    <a href="#" class="item-suspenso">Dúvidas Frequentes</a>
+                <!-- Caixa de Entrada -->
+                <div class="nav-dropdown">
+                    <button class="dropdown-btn notification-btn">
+                        <span class="material-symbols-outlined">mail</span>
+                        Caixa de Entrada
+                        <span class="notification-badge">3</span>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="#"><span class="material-symbols-outlined">assignment</span> Prof. Silva: Correção da
+                            tarefa</a>
+                        <a href="#"><span class="material-symbols-outlined">event</span> Prof. Souza: Aula extra
+                            marcada</a>
+                        <a href="#"><span class="material-symbols-outlined">update</span> Plataforma: Atualização do
+                            sistema</a>
+                    </div>
+                </div>
+
+                <!-- Contato -->
+                <div class="nav-dropdown">
+                    <button class="dropdown-btn">
+                        <span class="material-symbols-outlined">support_agent</span>
+                        Contato
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="#"><span class="material-symbols-outlined">person</span> Fale com o Professor</a>
+                        <a href="#"><span class="material-symbols-outlined">help</span> Suporte da Plataforma</a>
+                        <a href="#"><span class="material-symbols-outlined">live_help</span> Dúvidas Frequentes</a>
+                    </div>
                 </div>
             </div>
         </div>
     </nav>
 
+    <!-- Menu Lateral -->
+    <aside class="sidebar">
+        <div class="user-profile">
+            <span class="material-symbols-outlined user-icon">account_circle</span>
+            <div class="user-info">
+                <span class="user-name">João S. Silva</span>
+                <span class="user-email">joao.s.silva@estudante.com.br</span>
+            </div>
+        </div>
 
-    <nav class="menu_lateral" aria-label="Navegação principal">
-        <ul>
-            <li class="txt_link" id="nome_email">
-                <span class="material-symbols-outlined icone_menu-lateral">account_circle</span>
-                <div class="contato_email">
-                    joao.s.silva@estudante.com.br
+        <div class="video-playlist">
+            <h2 class="playlist-title">Aulas Disponíveis</h2>
+
+            <div class="video-item">
+                <div class="video-thumbnail">
+                    <iframe src="https://www.youtube.com/embed/C9Kj594dRxU?si=4MKlzQcIRhtkVQV7"
+                        title="AULA 01 - Apresentação Inicial" allowfullscreen></iframe>
                 </div>
-            </li>
-            <li class="item_menu video">
-                <div class="lista-video_menu-lateral video-001">
-                    <iframe class="opc_video" width="560" height="315"
-                        src="https://www.youtube.com/embed/C9Kj594dRxU?si=4MKlzQcIRhtkVQV7" title="YouTube video player"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    AULA 01 - Apresentação Inicial
+                <h3 class="video-title">AULA 01 - Apresentação Inicial</h3>
+            </div>
+
+            <div class="video-item">
+                <div class="video-thumbnail">
+                    <iframe src="https://www.youtube.com/embed/Oj26AOVuLYw?si=TXutjGGGtrQwBhp9"
+                        title="AULA 02 - Conceitos Básicos" allowfullscreen></iframe>
                 </div>
-            </li>
-            <li class="item_menu video">
-                <div class="lista-video_menu-lateral video-002">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Oj26AOVuLYw?si=TXutjGGGtrQwBhp9"
-                        title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        AULA 02 - Conceitos Básicos
+                <h3 class="video-title">AULA 02 - Conceitos Básicos</h3>
+            </div>
+
+            <div class="video-item">
+                <div class="video-thumbnail">
+                    <iframe src="https://www.youtube.com/embed/8hkScwI_ZTU?si=mnNv3eekb8skr4ms"
+                        title="AULA 03 - Tópicos Avançados" allowfullscreen></iframe>
                 </div>
-            </li>
-            <li class="item_menu video">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/8hkScwI_ZTU?si=mnNv3eekb8skr4ms"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </li>
-            <li class="item_menu video">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/iy9vp0rdD90?si=Ysf97GmZ_fPUDm1T"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </li>
-            <li class="item_menu video">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/eCLthWcwC60?si=vimY5IV4CRSTpJDn"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </li>
-        </ul>
-    </nav>
+                <h3 class="video-title">AULA 03 - Tópicos Avançados</h3>
+            </div>
 
+            <div class="video-item">
+                <div class="video-thumbnail">
+                    <iframe src="https://www.youtube.com/embed/iy9vp0rdD90?si=Ysf97GmZ_fPUDm1T"
+                        title="AULA 04 - Prática Guiada" allowfullscreen></iframe>
+                </div>
+                <h3 class="video-title">AULA 04 - Prática Guiada</h3>
+            </div>
 
+            <div class="video-item">
+                <div class="video-thumbnail">
+                    <iframe src="https://www.youtube.com/embed/eCLthWcwC60?si=vimY5IV4CRSTpJDn"
+                        title="AULA 05 - Projeto Final" allowfullscreen></iframe>
+                </div>
+                <h3 class="video-title">AULA 05 - Projeto Final</h3>
+            </div>
+        </div>
+    </aside>
 
-    <div class="conteudo-principal">
-        <!-- Conteudo Principal -->
-        <h1>Bem-vindo à Área do Aluno!</h1>
-        <p>Aqui você pode acessar suas turmas, verificar seu progresso e entrar em contato com os professores.</p>
-        <p>Explore as opções no menu para começar!</p>
-    </div>
+    <!-- Conteúdo Principal -->
+    <main class="main-content">
+        <section class="welcome-section">
+            <h1>Bem-vindo à Área do Aluno!</h1>
+            <p class="welcome-message">Aqui você pode acessar suas turmas, verificar seu progresso e entrar em contato
+                com os professores. Explore as opções no menu para começar!</p>
+
+            <div class="quick-actions">
+                <div class="action-card">
+                    <span class="material-symbols-outlined">video_library</span>
+                    <h3>Continuar Assistindo</h3>
+                    <p>Retome suas aulas de onde parou</p>
+                </div>
+
+                <div class="action-card">
+                    <span class="material-symbols-outlined">assignment</span>
+                    <h3>Tarefas Pendentes</h3>
+                    <p>Verifique suas atividades</p>
+                </div>
+
+                <div class="action-card">
+                    <span class="material-symbols-outlined">calendar_month</span>
+                    <h3>Calendário</h3>
+                    <p>Próximas aulas e eventos</p>
+                </div>
+            </div>
+        </section>
+    </main>
 </body>
 
 </html>
