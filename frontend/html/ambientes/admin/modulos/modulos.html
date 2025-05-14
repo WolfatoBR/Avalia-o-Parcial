@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gerenciar Módulos</title>
+    <link rel="stylesheet" href="/frontend/css/ambientes/admin/modulos/modulos.css">
+    <script src="../../../../../javascript/admin/modulos.js" defer></script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="/frontend/html/ambientes/admin/tela_admin.html" class="logo">Painel Admin</a>
+    </nav>
+
+    <div class="conteudo-principal">
+        <h1>Lista de Módulos</h1>
+        <button id ="botaoCriarModulo" class="botao">Criar Novo Módulo</button>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome do Módulo</th>
+                    <th>Curso Relacionado</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id = "modulos_list">
+                
+            </tbody>
+        </table>
+    </div>
+        <!-- Modal de Criar Novo Módulo -->
+        <div id="modalCriarModulo" class="modal">
+            <div class="modal-conteudo">
+                <span class="fechar" id="fecharModal">&times;</span>
+                <h2>Criar Novo Módulo</h2>
+                <form id="formCriarModulo">
+                    <label for="nomeModulo">Nome do Módulo:</label>
+                    <input type="text" id="nomeModulo" required>
+    
+                    <label for="cursoModulo">Curso Relacionado:</label>
+                    <select id="cursoModulo" required> </select>
+    
+                    <button type="submit">Criar Módulo</button>
+                </form>
+            </div>
+        </div>
+
+ <!-- Modal de Editar Módulo -->
+    <div id="modalEditarModulo" class="modal">
+        <div class="modal-conteudo">
+            <span class="fechar" id="fecharModalEditar">&times;</span>
+            <h2>Editar Módulo</h2>
+            <form id="formEditarModulo">
+                <input type ="hidden" id="editarModuloId">
+                <label for="editarNomeModulo">Nome do Módulo:</label>
+                <input type="text" id="editarNomeModulo" required>
+    
+                <label for="editarCursoModulo">Curso Relacionado:</label>
+                <select id="editarCursoModulo" required> </select>
+    
+                <button type="submit">Salvar</button>
+            </form>
+        </div>
+    </div>  
+<!-- Modal de Confirmação de Exclusão -->
+<div id="modalConfirmarExclusao" class="modal">
+    <div class="modal-conteudo">
+        <h2>Confirmar Exclusão</h2>
+        <p>Tem certeza que deseja excluir este módulo?</p>
+        <input type="hidden" id="moduloIdParaExcluir">
+        <button id="confirmarExclusao" class="botao confirmarExclusao">Sim, excluir</button>
+        <button id="cancelarExclusao" class="botao">Cancelar</button>
+    </div>
+</div>     
+</body>
+
+</html>

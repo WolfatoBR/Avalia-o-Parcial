@@ -7,16 +7,16 @@
     <!-- CSS padronizado -->
     <link rel="stylesheet" href="../css/padrao.css">
     <!-- CSS do menu superior -->
-    <link rel="stylesheet" href="../css/menu_sup.css">
+    <link rel="stylesheet" href="../css/menu_sup_and_zap.css">
+    <!-- JS do menu superior -->
+    <script src="/Avalia-o-Parcial/javascript/menu.js"></script>
     <!-- CSS da página atual -->
     <link rel="stylesheet" href="../css/menu_area.css">
-    <!-- Ícones  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- JS da página atual -->
+    <script src="/javascript/menu_area.js"></script>
     <!-- Ícones do Google fonts -->
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=person" />
-    <script src="/Avalia-o-Parcial/javascript/menu.js"></script>
-
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <title>Instituto CoreClever</title>
 </head>
 
@@ -24,9 +24,8 @@
     <!-- Botão para abrir/fechar o menu (mobile) -->
     <button class="menu-toggle" aria-label="Abrir menu">☰</button>
 
-    <div class="chama-menu">
-    </div>
-    <!-- Para chamar o MENU SUPERIOR-->
+    <!-- Para chamar o MENU SUPERIOR -->
+    <div class="chama-menu"></div>
     <script>
         fetch('../html/menu_sup.html')
             .then(response => response.text())
@@ -34,7 +33,7 @@
                 document.querySelector('.chama-menu').innerHTML = html;
             });
     </script>
-    <!-- /Para chamar o MENU SUPERIOR-->
+    <!-- Para chamar o MENU SUPERIOR -->
 
     <!-- Botão do Zap -->
     <div class="floating-button contato" onclick="window.location.href='https://wa.me/5571900000000'">
@@ -43,62 +42,280 @@
     </div>
     <!-- /Botão do Zap -->
 
+
+
+
     <section class="sec_top">
+        <div class="barra_topo">
+            <p class="p_lider">• líder no que vale: CLASSIFICAÇÃO! •</p>
+            <div class="img_letreiro">
+                <img src="../img/logo.jpg">
+            </div>
+            <div class="img_letreiro">
+                <img src="../img/logo.jpg">
+            </div>
+        </div>
         <div class="dv_caixa">
             <div class="dv_infos">
-                <b>
-                    <h1>Seja bem-vindo!</h1>
-                </b>
-                <p>Melhor Instituto</p>
-                <div href="#" class=""></div>
+                <h1>TURMA de JUNHO</h1>
+                <h2>Desconto LIMITADO!</h2>
+                <p>Transformando Vidas pelo Conhecimento: Seu Futuro Começa Aqui!</p>
+            </div>
+        </div>
+
+        <div class="dvop_cursos-container">
+            <div class="dvop_cursos">
+                <div class="curso-conteudo">
+                    Vagas limitadas!
+                </div>
+            </div>
+            <div class="dvop_cursos">
+                <div class="curso-conteudo">
+                    Turmas abertas até <b>30/05/2025</b>
+                </div>
+            </div>
+            <div class="dvop_cursos">
+                <div class="curso-conteudo">
+                    Inscreva-se agora!
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="carrossel-container">
+        <div class="carrossel">
+            <div class="slide">
+                <img src="../img/logoPrincipal_001.png" alt="Laboratório de informática">
+            </div>
+            <div class="slide">
+                <img src="../img/logoPrincipal_001.png" alt="Laboratório de informática">
+            </div>
+        </div>
+        <div class="dvpsq_curso">
+            <h1>Encontre o curso que você deseja</h1>
+            <input type="text" name="curso" id="cursoInput" placeholder="" class="input_curso">
+            <a href="" class="lk_buscar"><span class="material-symbols-outlined">
+                    search
+                </span></a>
+        </div>
+    </section>
+
+
+    <section class="depoimentos-militares">
+        <div class="cabecalho-depoimentos">
+            <h2>DEPOIMENTOS DE QUEM <span>CONHECE</span></h2>
+            <p>Alunos que alcançaram a aprovação com nosso método</p>
+        </div>
+
+        <div class="carrossel-depoimentos">
+            <!-- Depoimento 1 -->
+            <div class="card-militar">
+                <div class="foto-avaliacao">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80"
+                        alt="Aluno 1">
+                    <div class="estrelas">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                </div>
+                <div class="texto-militar">
+                    <h3>Marcelo Silva</h3>
+                    <p class="cargo">Desenvolvedor back-end</p>
+                    <p class="depoimento">"O material didático e as aulas direcionadas foram decisivos para minha
+                        carreira. Recomendo!"</p>
+                </div>
+            </div>
+
+            <!-- Depoimento 2 -->
+            <div class="card-militar">
+                <div class="foto-avaliacao">
+                    <img src="https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80"
+                        alt="Aluno 2">
+                    <div class="estrelas">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                </div>
+                <div class="texto-militar">
+                    <h3>Amanda Souza</h3>
+                    <p class="cargo">Engenharia da Computação</p>
+                    <p class="depoimento">"Professores ótimos com experiência real no mercado fazem toda a diferença no
+                        aprendizado. Adorei aprender com vocês!!"</p>
+                </div>
+            </div>
+
+            <!-- Depoimento 3 (Novo) -->
+            <div class="card-militar">
+                <div class="foto-avaliacao">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80"
+                        alt="Aluno 3">
+                    <div class="estrelas">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                </div>
+                <div class="texto-militar">
+                    <h3>Ricardo Almeida</h3>
+                    <p class="cargo">Designer Gráfico</p>
+                    <p class="depoimento">"As estratégias dos professores me deram a vantagem que precisava."</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!--
-    Conteúdo Principal
-    <main class="conteudo-principal">
-        <div id="autoCarousel" class="carousel slide" data-bs-ride="carousel">
--->
-    <!-- Indicadores -->
-    <!--
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#autoCarousel" data-bs-slide-to="0" class="active"></button>
-                <button type="button" data-bs-target="#autoCarousel" data-bs-slide-to="1"></button>
-                <button type="button" data-bs-target="#autoCarousel" data-bs-slide-to="2"></button>
+
+    <section class="carrossel-videos">
+        <h2 class="titulo-carrossel">Conheça alguns de nossos parceiros no YouTube</h2>
+
+        <div class="carrossel-container2">
+            <button class="carrossel-controle anterior" aria-label="Vídeo anterior">&#10094;</button>
+
+            <div class="carrossel-videos-inner">
+                <!-- Vídeo 1 -->
+                <div class="video-item ativo">
+                    <iframe src="https://www.youtube.com/embed/9fNHAD7ZDL4?rel=0&modestbranding=1"
+                        title="Conheça nosso parceiro no YouTube" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                    </iframe>
+                </div>
+
+                <!-- Vídeo 2 -->
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/nsFBDCR1vLc?list=PLEAQjGRLyR4vMyJHv1TNfJR1fNJ408OpC"
+                        title="Conheça nosso parceiro no YouTube" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                    </iframe>
+                </div>
+
+                <!-- Vídeo 3 -->
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/cTQHrNOlAUo?si=VSGVjo4jZ4cMoc8u"
+                        title="Conheça nosso parceiro no YouTube" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                    </iframe>
+                </div>
+
+                <!-- Vídeo 4 -->
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/EuQyOyN6keA?si=-1bTpb9fwDNPBp21"
+                        title="Conheça nosso parceiro no YouTube" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                    </iframe>
+                </div>
+
+                <!-- Vídeo 5 -->
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/Sy8i9j9ZHiE?si=YqxMWwWvsYgZsoy-"
+                        title="Conheça nosso parceiro no YouTube" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                    </iframe>
+                </div>
             </div>
--->
-    <!-- Slides -->
-    <!--
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="https://img.freepik.com/fotos-gratis/retrato-de-um-estudante-latino-atraente-fazendo-algum-trabalho-escolar-com-um-laptop-na-biblioteca_662251-1218.jpg" 
-                         class="d-block w-100" 
-                         alt="Estudante na biblioteca">
-                </div>
-                <div class="carousel-item">
-                    <img src="https://img.freepik.com/fotos-gratis/estudante-adolescente-em-fones-de-ouvido-sentado-a-mesa-e-digitando-no-notebook_23-2148166385.jpg" 
-                         class="d-block w-100" 
-                         alt="Estudante com notebook">
-                </div>
-                <div class="carousel-item">
-                    <img src="https://img.freepik.com/fotos-gratis/tutor-ajudando-os-alunos-na-aula-de-informatica_74855-1668.jpg" 
-                         class="d-block w-100" 
-                         alt="Professor ajudando alunos">
-                </div>
-            </div>
--->
-    <!-- Controles -->
-    <!--            <button class="carousel-control-prev" type="button" data-bs-target="#autoCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#autoCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon"></span>
-            </button>
+
+            <button class="carrossel-controle proximo" aria-label="Próximo vídeo">&#10095;</button>
         </div>
 
-    </main>
--->
+        <div class="carrossel-indicadores">
+            <span class="indicador ativo" data-index="0"></span>
+            <span class="indicador" data-index="1"></span>
+            <span class="indicador" data-index="2"></span>
+            <span class="indicador" data-index="3"></span>
+            <span class="indicador" data-index="4"></span>
+        </div>
+    </section>
+
+
+
+
+
+
+
+    <section class="militar-identidade-ancoragem">
+        <div class="container-militar-principal">
+            <h2 class="titulo-ancoragem-militar">Por que escolher o Instituto CoreClever?</h2>
+            <p class="subtitulo-ancoragem">O curso que mais aprova e classifica nas escolas militares. Sua preparação
+                será direcionada, personalizada e focada na Escola Militar que você deseja ingressar. O curso que é
+                objeto de desejos de muitos está ao seu alcance.</p>
+
+            <div class="grupo-modulos-ancoragem">
+                <!-- Módulo 1 -->
+                <div class="modulo-conteudo-militar">
+                    <div class="icone-modulo-militar"><span class="material-symbols-outlined">
+                            rss_feed
+                        </span></div>
+                    <h3 class="titulo-modulo-militar">Conteúdo 100% digital</h3>
+                    <p class="texto-modulo-militar">Livros Digitais Interativos, Videoaulas, Banco de Questões,
+                        Planejamento de Estudos e todos os recursos de estudos totalmente digitais ao seu alcance.</p>
+                </div>
+
+                <!-- Módulo 2 -->
+                <div class="modulo-conteudo-militar">
+                    <div class="icone-modulo-militar"><span class="material-symbols-outlined">
+                            check_circle
+                        </span></div>
+                    <h3 class="titulo-modulo-militar">Completo, atualizado e confiável</h3>
+                    <p class="texto-modulo-militar">Um conteúdo exclusivo e de alta qualidade, atualizado constantemente
+                        por nossos professores. É garantido: temos o melhor material de ensino!</p>
+                </div>
+
+                <!-- Módulo 3 -->
+                <div class="modulo-conteudo-militar">
+                    <div class="icone-modulo-militar"><span class="material-symbols-outlined">
+                            forum
+                        </span></div>
+                    <h3 class="titulo-modulo-militar">Questões comentadas de verdade</h3>
+                    <p class="texto-modulo-militar">Acesse um banco de questões comentadas alternativa por alternativa,
+                        em texto e vídeo. A solução completa de estudo por questões.</p>
+                </div>
+            </div>
+
+            <div class="grupo-modulos-ancoragem">
+                <!-- Módulo 4 -->
+                <div class="modulo-conteudo-militar">
+                    <div class="icone-modulo-militar"><span class="material-symbols-outlined">
+                            description
+                        </span></div>
+                    <h3 class="titulo-modulo-militar">Listas e simulados personalizados</h3>
+                    <p class="texto-modulo-militar">Otimize sua performance e entenda a dinâmica da sua prova com listas
+                        e simulados de acordo com o seu objetivo. É a certeza de que você estará pronto no dia da prova!
+                    </p>
+                </div>
+
+                <!-- Módulo 5 -->
+                <div class="modulo-conteudo-militar">
+                    <div class="icone-modulo-militar"><span class="material-symbols-outlined">
+                            stylus_note
+                        </span></div>
+                    <h3 class="titulo-modulo-militar">Redações ilimitadas</h3>
+                    <p class="texto-modulo-militar">Envie quantas redações quiser e todas elas serão corrigidas por nós
+                        dentro do mesmo padrão estabelecido por sua prova, dando a você a oportunidade de melhorar
+                        continuamente.</p>
+                </div>
+
+                <!-- Módulo 6 -->
+                <div class="modulo-conteudo-militar">
+                    <div class="icone-modulo-militar"><span class="material-symbols-outlined">
+                            help
+                        </span></div>
+                    <h3 class="titulo-modulo-militar">Fórum de dúvidas 24h por dia</h3>
+                    <p class="texto-modulo-militar">Envie todas as dúvidas que você tiver durante seus estudos para
+                        nosso time de professores.</p>
+                </div>
+            </div>
+
+            <div class="destaques-finais-ancoragem">
+                <div class="item-destaque-militar">
+                    <span class="simbolo-material-militar">schedule</span>
+                    <p class="texto-destaque-militar">Estude no seu tempo!</p>
+                </div>
+                <div class="item-destaque-militar">
+                    <span class="simbolo-material-militar">verified_user</span>
+                    <p class="texto-destaque-militar">Aqui o risco é zero!</p>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
 
 </html>

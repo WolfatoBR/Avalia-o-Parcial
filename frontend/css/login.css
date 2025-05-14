@@ -16,13 +16,13 @@ body {
     padding: 2rem;
 }
 
-.cad-container {
+.login-container {
     background-color: #fff;
-    padding: 2rem 2.5rem;
+    padding: 2rem 3rem;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     width: 100%;
-    max-width: 500px;
+    max-width: 400px;
 }
 
 .back a {
@@ -37,7 +37,7 @@ body {
     text-decoration: underline;
 }
 
-.cad-form h2 {
+.login-form h2 {
     text-align: center;
     margin-bottom: 2rem;
     color: #863a0d;
@@ -54,8 +54,7 @@ body {
     color: #333;
 }
 
-.form-group input,
-.form-group select {
+.form-group input {
     width: 100%;
     padding: 0.75rem;
     border: 1px solid #ccc;
@@ -64,13 +63,25 @@ body {
     transition: border-color 0.3s ease;
 }
 
-.form-group input:focus,
-.form-group select:focus {
+.form-group input:focus {
     border-color: #863a0d;
     outline: none;
 }
 
-button[type="submit"] {
+.forgot-password {
+    display: block;
+    margin-top: 0.5rem;
+    text-align: right;
+    font-size: 0.9rem;
+    color: #863a0d;
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.login-button {
     width: 100%;
     padding: 0.75rem;
     background-color: #863a0d;
@@ -83,13 +94,22 @@ button[type="submit"] {
     transition: background-color 0.3s ease;
 }
 
-button[type="submit"]:hover {
+.login-button:hover {
     background-color: #6e2e09;
 }
 
-#mensagemErro {
-    display: block;
-    margin-top: 0.5rem;
-    color: red;
+.signup-link {
+    margin-top: 1.5rem;
+    text-align: center;
     font-size: 0.9rem;
+}
+
+.signup-link a {
+    color: #863a0d;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
 }

@@ -1,0 +1,294 @@
+/* Estilos Gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    padding-top: 70px; /* Espaço para a navbar fixa */
+}
+
+/* Barra de Navegação com Nova Paleta */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.9); /* Preto com transparência */
+    color: aliceblue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid #a34f1f; /* Cor laranja do carrossel */
+}
+
+.logo {
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    color: aliceblue;
+}
+
+.nav-itens {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-item, .suspensa {
+    position: relative;
+    cursor: pointer;
+    padding: 10px 0;
+    transition: all 0.3s ease;
+    color: aliceblue;
+}
+
+.nav-item:hover, .suspensa:hover {
+    color: #a34f1f; /* Cor laranja do carrossel */
+}
+
+/* Menu Suspenso - Estilo com Nova Paleta */
+.suspensa {
+    position: relative;
+    display: inline-block;
+}
+
+.conteudo-suspenso {
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.95);
+    min-width: 250px;
+    max-width: 300px;
+    box-shadow: 0 8px 16px rgba(163, 79, 31, 0.3); /* Sombra laranja */
+    z-index: 1;
+    border-radius: 5px;
+    top: 100%;
+    right: 0;
+    left: auto;
+    border: 1px solid #a34f1f;
+}
+
+.nav-itens > .suspensa:last-child .conteudo-suspenso {
+    right: 0;
+    left: auto;
+}
+
+.suspensa:hover .conteudo-suspenso {
+    display: block;
+}
+
+.item-suspenso {
+    color: aliceblue;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: all 0.3s ease;
+    white-space: normal;
+    word-wrap: break-word;
+    border-bottom: 1px solid rgba(163, 79, 31, 0.2);
+}
+
+.item-suspenso:hover {
+    background-color: #a34f1f;
+    color: white;
+}
+
+
+
+/* Conteúdo Principal */
+.conteudo-principal {
+    margin-top: 20px;
+    padding: 20px;
+    color: #333;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 15px;
+    }
+    
+    .nav-itens {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        margin-top: 15px;
+        align-items: flex-start;
+    }
+    
+    .progresso-container {
+        width: 100%;
+        margin: 10px 0;
+    }
+    
+    .conteudo-suspenso {
+        position: static;
+        width: 100%;
+        max-width: 100%;
+        right: auto;
+        left: auto;
+    }
+    
+    .suspensa {
+        width: 100%;
+    }
+    
+    .texto-progresso {
+        right: -30px;
+    }
+}
+
+/* ====== Estilos para a Tabela de Módulos ====== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+th, td {
+    padding: 14px 18px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+th {
+    background-color: #a34f1f;
+    color: white;
+    font-weight: bold;
+}
+
+td a {
+    color: #a34f1f;
+    text-decoration: none;
+    font-weight: 500;
+    margin-right: 10px;
+    transition: color 0.2s ease;
+}
+
+td a:hover {
+    color: #7f3612;
+}
+
+/* Botão de ação */
+.botao {
+    display: inline-block;
+    background-color: #a34f1f;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.botao:hover {
+    background-color: #7f3612;
+}
+
+/* Estilos do formulário (novo/editar módulo) */
+form {
+    max-width: 600px;
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+form button {
+    background-color: #a34f1f;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #7f3612;
+}
+
+/*formulario de criacao de modulo */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-conteudo {
+    background-color: #fff;
+    padding: 20px;
+    margin: 10% auto;
+    width: 300px;
+    text-align: center;
+}
+
+.fechar {
+    color: #aaa;
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.fechar:hover,
+.fechar:focus {
+    color: black;
+    cursor: pointer;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+/* exclusao */
+.confirmarExclusao {
+    background-color: #e74c3c;
+    color: white;
+}
