@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const markAsWatchedBtn = document.getElementById('markAsWatchedBtn');
     const videoHighlightContainer = document.querySelector('.video-highlight-container');
 
+    
     // Variáveis de estado
     let watchedVideos = JSON.parse(localStorage.getItem('watchedVideos')) || [];
     let currentProgress = parseInt(localStorage.getItem('progress')) || 0;
