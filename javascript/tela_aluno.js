@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Elementos do DOM
     const modal = document.getElementById('videoModal');
     const fecharModal = document.querySelector('.fechar-modal');
@@ -10,8 +10,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const resetProgressBtn = document.getElementById('resetProgressBtn');
     const markAsWatchedBtn = document.getElementById('markAsWatchedBtn');
     const videoHighlightContainer = document.querySelector('.video-highlight-container');
+    const caixa = document.querySelector('.dropdown-content');
+    const popUp = document.querySelector('.dialog-content');
 
     
+
     // Variáveis de estado
     let watchedVideos = JSON.parse(localStorage.getItem('watchedVideos')) || [];
     let currentProgress = parseInt(localStorage.getItem('progress')) || 0;
@@ -46,13 +49,13 @@ document.addEventListener('DOMContentLoaded', function() {
         videoItems.forEach(item => {
             const botaoAssistir = item.querySelector('.botao-assistir');
 
-            botaoAssistir.addEventListener('click', function(e) {
+            botaoAssistir.addEventListener('click', function (e) {
                 e.stopPropagation();
                 const videoId = item.getAttribute('data-video-id');
                 openVideoModal(videoId);
             });
 
-            item.addEventListener('click', function() {
+            item.addEventListener('click', function () {
                 const videoId = item.getAttribute('data-video-id');
                 openVideoModal(videoId);
             });
@@ -61,14 +64,14 @@ document.addEventListener('DOMContentLoaded', function() {
         // Eventos do modal
         fecharModal.addEventListener('click', closeVideoModal);
         markAsWatchedBtn.addEventListener('click', markCurrentVideoAsWatched);
-        
-        window.addEventListener('click', function(event) {
+
+        window.addEventListener('click', function (event) {
             if (event.target === modal) {
                 closeVideoModal();
             }
         });
 
-        document.addEventListener('keydown', function(event) {
+        document.addEventListener('keydown', function (event) {
             if (event.key === 'Escape' && modal.style.display === 'block') {
                 closeVideoModal();
             }
@@ -88,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
         currentVideoId = videoId;
         const videoItem = document.querySelector(`.video-item[data-video-id="${videoId}"]`);
         const isAlreadyWatched = watchedVideos.includes(videoId);
-        
+
         // Configura o iframe
         videoIframe.src = `https://www.youtube.com/embed/${videoId}?enablejsapi=1&rel=0&modestbranding=1`;
         modal.style.display = 'block';
@@ -99,9 +102,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Inicializa o player do YouTube
         loadYouTubeAPI();
-        
+
         // Configura a função global que a API do YouTube vai chamar
-        window.onYouTubeIframeAPIReady = function() {
+        window.onYouTubeIframeAPIReady = function () {
             youtubePlayer = new YT.Player('youtube-player', {
                 events: {
                     'onReady': onPlayerReady,
@@ -145,12 +148,12 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!watchedVideos.includes(videoId)) {
             watchedVideos.push(videoId);
             localStorage.setItem('watchedVideos', JSON.stringify(watchedVideos));
-            
+
             const videoItem = document.querySelector(`.video-item[data-video-id="${videoId}"]`);
             if (videoItem) {
                 videoItem.classList.add('watched');
             }
-            
+
             updateGlobalProgress();
         }
     }
@@ -169,7 +172,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.log("Erro ao parar vídeo:", e);
             }
         }
-        
+
         modal.style.display = 'none';
         document.body.style.overflow = 'auto';
         videoIframe.src = '';
@@ -182,14 +185,14 @@ document.addEventListener('DOMContentLoaded', function() {
             localStorage.removeItem('progress');
             watchedVideos = [];
             currentProgress = 0;
-            
+
             videoItems.forEach(item => {
                 item.classList.remove('watched');
             });
-            
+
             updateProgressBar();
             updateMarkAsWatchedButton(false);
-            
+
             // Mostra a notificação
             showNotification('Progresso resetado com sucesso!', 'success');
         }
@@ -199,7 +202,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const notification = document.getElementById('notification');
         const icon = notification.querySelector('.notification-icon');
         const text = notification.querySelector('.notification-text');
-        
+
         // Configura conforme o tipo
         if (type === 'success') {
             notification.style.backgroundColor = 'var(--success)';
@@ -211,13 +214,13 @@ document.addEventListener('DOMContentLoaded', function() {
             notification.style.backgroundColor = 'var(--primary-color)';
             icon.textContent = 'info';
         }
-        
+
         text.textContent = message;
-        
+
         // Mostra a notificação
         notification.classList.remove('notification-hidden');
         notification.classList.add('notification-visible');
-        
+
         // Esconde após 3 segundos
         setTimeout(() => {
             notification.classList.remove('notification-visible');
@@ -242,9 +245,9 @@ document.addEventListener('DOMContentLoaded', function() {
     function showFeaturedVideo() {
         const firstVideo = document.querySelector('.video-item');
         if (!firstVideo) return;
-        
+
         const videoId = firstVideo.getAttribute('data-video-id');
         const videoTitle = firstVideo.querySelector('.video-title').textContent;
-        
+
     }
 });

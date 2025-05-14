@@ -250,6 +250,23 @@ body {
     }
 }
 
+.dialog_popUp {
+    position: fixed;
+    bottom: 15px;
+    right: 10px;
+    height: 450px;
+    width: 250px;
+    /* Mudei de vermelho para branco */
+    background-image: url(/frontend/img/mobile.png);
+    border-radius: 10px;
+    transition: transform 0.3s ease-out;
+    z-index: 1000;
+    /* Removi propriedades conflitantes */
+    display: none;
+    /* Adicionei para controle de visibilidade */
+    overflow: auto;
+}
+
 .dropdown-btn:hover {
     background-color: rgba(163, 79, 31, 0.1);
 }
