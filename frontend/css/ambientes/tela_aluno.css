@@ -479,9 +479,10 @@ body {
 
 .fechar-modal {
     position: absolute;
-    top: 1rem;
+    top: 10px;
+    bottom: 30px;
     right: 1.5rem;
-    color: var(--light-gray);
+    color: var(--primary-dark);
     font-size: 2rem;
     font-weight: bold;
     cursor: pointer;
@@ -499,7 +500,6 @@ body {
 
 .fechar-modal:hover {
     color: var(--white);
-    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .video-container {
