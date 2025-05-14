@@ -2,25 +2,31 @@ document.addEventListener('DOMContentLoaded', function() {
     // Elementos do DOM
     const modal = document.getElementById('videoModal');
     const fecharModal = document.querySelector('.fechar-modal');
-    const videoIframe = document.querySelector('.video-iframe');
+    const videoIframe = document.getElementById('youtube-player');
     const videoItems = document.querySelectorAll('.video-item');
     const progressFill = document.querySelector('.progress-fill');
     const progressPercent = document.querySelector('.progress-percent');
     const progressBar = document.querySelector('.progress-bar');
     const resetProgressBtn = document.getElementById('resetProgressBtn');
+    const markAsWatchedBtn = document.getElementById('markAsWatchedBtn');
+    const videoHighlightContainer = document.querySelector('.video-highlight-container');
 
     // Variáveis de estado
     let watchedVideos = JSON.parse(localStorage.getItem('watchedVideos')) || [];
     let currentProgress = parseInt(localStorage.getItem('progress')) || 0;
     const totalVideos = videoItems.length;
-    let youtubePlayer;
+    let youtubePlayer = null;
+    let currentVideoId = null;
 
     // Inicialização
-    updateProgressBar();
-    markWatchedVideos();
-    setupEventListeners();
-    loadYouTubeAPI();
-    showFeaturedVideo();
+    init();
+
+    function init() {
+        updateProgressBar();
+        markWatchedVideos();
+        setupEventListeners();
+        showFeaturedVideo();
+    }
 
     function markWatchedVideos() {
         videoItems.forEach(item => {
@@ -53,6 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Eventos do modal
         fecharModal.addEventListener('click', closeVideoModal);
+        markAsWatchedBtn.addEventListener('click', markCurrentVideoAsWatched);
         
         window.addEventListener('click', function(event) {
             if (event.target === modal) {
@@ -68,54 +75,86 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function loadYouTubeAPI() {
-        const tag = document.createElement('script');
-        tag.src = "https://www.youtube.com/iframe_api";
-        const firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-    }
-
-    function onYouTubeIframeAPIReady() {
-        // Função chamada quando a API do YouTube está pronta
+        if (!window.YT) {
+            const tag = document.createElement('script');
+            tag.src = "https://www.youtube.com/iframe_api";
+            const firstScriptTag = document.getElementsByTagName('script')[0];
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+        }
     }
 
     function openVideoModal(videoId) {
+        currentVideoId = videoId;
         const videoItem = document.querySelector(`.video-item[data-video-id="${videoId}"]`);
+        const isAlreadyWatched = watchedVideos.includes(videoId);
         
         // Configura o iframe
         videoIframe.src = `https://www.youtube.com/embed/${videoId}?enablejsapi=1&rel=0&modestbranding=1`;
         modal.style.display = 'block';
         document.body.style.overflow = 'hidden';
 
+        // Configura o botão "Marcar como Visto"
+        updateMarkAsWatchedButton(isAlreadyWatched);
+
         // Inicializa o player do YouTube
-        youtubePlayer = new YT.Player(videoIframe, {
-            events: {
-                'onReady': onPlayerReady,
-                'onStateChange': onPlayerStateChange
-            }
-        });
-
-        function onPlayerReady(event) {
-            event.target.playVideo();
-        }
-
-        function onPlayerStateChange(event) {
-            // Quando o vídeo termina (código 0)
-            if (event.data === YT.PlayerState.ENDED) {
-                if (!watchedVideos.includes(videoId)) {
-                    markVideoAsWatched(videoId, videoItem);
+        loadYouTubeAPI();
+        
+        // Configura a função global que a API do YouTube vai chamar
+        window.onYouTubeIframeAPIReady = function() {
+            youtubePlayer = new YT.Player('youtube-player', {
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
                 }
-            }
+            });
+        };
+    }
+
+    function onPlayerReady(event) {
+        event.target.playVideo();
+    }
+
+    function onPlayerStateChange(event) {
+        // Quando o vídeo termina (código 0)
+        if (event.data === YT.PlayerState.ENDED) {
+            const videoId = event.target.getVideoUrl().split('v=')[1].split('&')[0];
+            markVideoAsWatched(videoId);
         }
     }
 
-    function markVideoAsWatched(videoId, videoItem) {
-        watchedVideos.push(videoId);
-        localStorage.setItem('watchedVideos', JSON.stringify(watchedVideos));
-        
-        if (videoItem) {
-            videoItem.classList.add('watched');
+    function updateMarkAsWatchedButton(isAlreadyWatched) {
+        if (isAlreadyWatched) {
+            markAsWatchedBtn.classList.add('disabled');
+            markAsWatchedBtn.innerHTML = '<span class="material-symbols-outlined">check</span> <span class="nome_botao-marcar">Já marcado como visto</span>';
+            markAsWatchedBtn.onclick = null;
+        } else {
+            markAsWatchedBtn.classList.remove('disabled');
+            markAsWatchedBtn.innerHTML = '<span class="material-symbols-outlined">check_circle</span> <span class="nome_botao-marcar">Marcar como Visto</span>';
         }
-        
+    }
+
+    function markCurrentVideoAsWatched() {
+        if (currentVideoId && !watchedVideos.includes(currentVideoId)) {
+            markVideoAsWatched(currentVideoId);
+            updateMarkAsWatchedButton(true);
+        }
+    }
+
+    function markVideoAsWatched(videoId) {
+        if (!watchedVideos.includes(videoId)) {
+            watchedVideos.push(videoId);
+            localStorage.setItem('watchedVideos', JSON.stringify(watchedVideos));
+            
+            const videoItem = document.querySelector(`.video-item[data-video-id="${videoId}"]`);
+            if (videoItem) {
+                videoItem.classList.add('watched');
+            }
+            
+            updateGlobalProgress();
+        }
+    }
+
+    function updateGlobalProgress() {
         currentProgress = Math.min(100, Math.round((watchedVideos.length / totalVideos) * 100));
         localStorage.setItem('progress', currentProgress);
         updateProgressBar();
@@ -123,26 +162,66 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function closeVideoModal() {
         if (youtubePlayer) {
-            youtubePlayer.stopVideo();
+            try {
+                youtubePlayer.stopVideo();
+            } catch (e) {
+                console.log("Erro ao parar vídeo:", e);
+            }
         }
-        videoIframe.src = '';
+        
         modal.style.display = 'none';
         document.body.style.overflow = 'auto';
+        videoIframe.src = '';
+        currentVideoId = null;
     }
 
     function resetProgress() {
-        localStorage.removeItem('watchedVideos');
-        localStorage.removeItem('progress');
-        watchedVideos = [];
-        currentProgress = 0;
-        progressBar.setAttribute('aria-valuenow', 0);
-        updateProgressBar();
+        if (confirm('Tem certeza que deseja resetar todo o seu progresso?')) {
+            localStorage.removeItem('watchedVideos');
+            localStorage.removeItem('progress');
+            watchedVideos = [];
+            currentProgress = 0;
+            
+            videoItems.forEach(item => {
+                item.classList.remove('watched');
+            });
+            
+            updateProgressBar();
+            updateMarkAsWatchedButton(false);
+            
+            // Mostra a notificação
+            showNotification('Progresso resetado com sucesso!', 'success');
+        }
+    }
+
+    function showNotification(message, type) {
+        const notification = document.getElementById('notification');
+        const icon = notification.querySelector('.notification-icon');
+        const text = notification.querySelector('.notification-text');
         
-        videoItems.forEach(item => {
-            item.classList.remove('watched');
-        });
+        // Configura conforme o tipo
+        if (type === 'success') {
+            notification.style.backgroundColor = 'var(--success)';
+            icon.textContent = 'check_circle';
+        } else if (type === 'error') {
+            notification.style.backgroundColor = 'var(--error)';
+            icon.textContent = 'error';
+        } else {
+            notification.style.backgroundColor = 'var(--primary-color)';
+            icon.textContent = 'info';
+        }
         
-        progressPercent.textContent = '0%';
+        text.textContent = message;
+        
+        // Mostra a notificação
+        notification.classList.remove('notification-hidden');
+        notification.classList.add('notification-visible');
+        
+        // Esconde após 3 segundos
+        setTimeout(() => {
+            notification.classList.remove('notification-visible');
+            notification.classList.add('notification-hidden');
+        }, 3000);
     }
 
     function updateProgressBar() {
@@ -164,6 +243,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!firstVideo) return;
         
         const videoId = firstVideo.getAttribute('data-video-id');
-        const videoHighlightContainer = document.querySelector('.video-highlight-container');
+        const videoTitle = firstVideo.querySelector('.video-title').textContent;
+        
     }
 });

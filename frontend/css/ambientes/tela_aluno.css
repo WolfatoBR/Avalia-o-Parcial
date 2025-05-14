@@ -93,6 +93,49 @@ body {
     border-radius: 6px;
     transition: all 0.3s ease;
 }
+/* Notificação */
+#notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 15px 20px;
+    border-radius: 8px;
+    background-color: var(--success);
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 3000;
+    transition: all 0.3s ease;
+    transform: translateY(100px);
+    opacity: 0;
+}
+
+.notification-visible {
+    transform: translateY(0) !important;
+    opacity: 1 !important;
+}
+
+.notification-icon {
+    font-size: 1.5rem !important;
+}
+
+.notification-text {
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+/* Animação de entrada e saída */
+@keyframes slideIn {
+    from { transform: translateY(100px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideOut {
+    from { transform: translateY(0); opacity: 1; }
+    to { transform: translateY(100px); opacity: 0; }
+}
 
 .dropdown-btn:hover {
     background-color: rgba(163, 79, 31, 0.1);
@@ -234,6 +277,7 @@ body {
     gap: 15px;
     padding: 1.5rem;
     border-bottom: 1px solid var(--medium-gray);
+    cursor: default;
 }
 
 .user-icon {
@@ -372,22 +416,18 @@ body {
     padding: 2rem;
     padding-top: 3.5rem;
 }
-
 .botao-marcar {
     display: flex;
-    justify-content: left;
-    align-self: center;
-    position: relative;
-    gap: 6px;
-    width: max-content;
-    border: none;
-    color: var(--light-gray);
+    align-items: center;
+    gap: 8px;
+    background-color: rgba(76, 175, 80, 0.1);
+    border: 1px solid var(--success);
+    color: var(--success);
+    padding: 10px 15px;
+    border-radius: 6px;
     cursor: pointer;
-    padding: 0.5rem;
-    border-radius: 50%;
+    margin: 20px auto 0;
     transition: all 0.3s ease;
-    margin-left: auto;
-    margin-top: 20px;
 }
 
 .botao-marcar:hover {
@@ -400,6 +440,12 @@ body {
 
 .video-item.watched .botao-marcar {
     color: var(--success);
+}
+/* Estilo quando o vídeo já foi marcado como visto */
+.botao-marcar.disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    background-color: rgba(76, 175, 80, 0.05);
 }
 
 .video-progress {

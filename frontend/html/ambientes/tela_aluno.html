@@ -147,10 +147,10 @@
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen></iframe>
                 </div>
-                <div class="botao-marcar" title="Marcar como visto">
+                <button class="botao-marcar" id="markAsWatchedBtn">
                     <span class="material-symbols-outlined">check_circle</span>
-                    <div class="nome_botao-marcar"> Marcar como Visto</div>
-                </div>
+                    <span class="nome_botao-marcar">Marcar como Visto</span>
+                </button>
             </div>
         </div>
 
@@ -183,7 +183,10 @@
             </div>
         </section>
     </main>
-
+    <div id="notification" class="notification-hidden">
+        <span class="material-symbols-outlined notification-icon">check_circle</span>
+        <span class="notification-text">Progresso resetado com sucesso!</span>
+    </div>
 </body>
 
 </html>
