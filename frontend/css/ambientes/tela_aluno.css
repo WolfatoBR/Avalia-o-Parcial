@@ -261,7 +261,6 @@ body {
 .dropdown-content {
     display: none;
     position: absolute;
-    top: 45px;
     right: 0;
     background-color: var(--dark-gray);
     min-width: 280px;
