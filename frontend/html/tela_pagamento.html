@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS padronizado -->
+    <link rel="stylesheet" href="../css/padrao.css">
+    <!-- CSS do menu superior -->
+    <link rel="stylesheet" href="../css/menu_sup_and_zap.css">
+    <!-- JS do menu superior -->
+    <script src="/Avalia-o-Parcial/javascript/menu.js"></script>
+    <!-- CSS da página atual -->
+    <link rel="stylesheet" href="../css/tela_pagamento.css">
+    <!-- JS da página atual -->
+    <script src="/javascript/menu_area.js"></script>
+    <!-- Ícones do Google fonts -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Instituto CoreClever</title>
+</head>
+
+<body>
+    <!-- Para chamar o MENU SUPERIOR -->
+    <div class="chama-menu"></div>
+    <script>
+        fetch('../html/menu_sup.html')
+            .then(response => response.text())
+            .then(html => {
+                document.querySelector('.chama-menu').innerHTML = html;
+            });
+    </script>
+    <!-- Para chamar o MENU SUPERIOR -->
+
+    <div class="barra-nomeCurso">
+        <span class="caixa-pagamento">
+            PAGAMENTO
+        </span>
+    </div>
+
+</body>
+
+</html>
