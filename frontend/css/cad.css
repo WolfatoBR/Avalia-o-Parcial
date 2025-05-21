@@ -1,107 +1,95 @@
-body {
-    font-family: Arial, sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Ephesis&family=Finlandica:ital,wght@0,400..700;1,400..700&family=Indie+Flower&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9;
-    color: #333;
-    transition: background-color 0.3s ease; /* Transição suave */
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2rem;
 }
 
 .cad-container {
+    background-color: #fff;
+    padding: 2rem 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    width: 100%;
     max-width: 500px;
-    margin: 50px auto;
-    padding: 20px;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave */
-}
-
-.cad-container:hover {
-    transform: translateY(-5px); /* Efeito de elevação */
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2); /* Sombras mais intensas ao passar o mouse */
 }
 
 .back a {
+    color: #863a0d;
+    font-weight: bold;
     text-decoration: none;
-    color: #007bff;
-    font-size: 14px;
-    transition: color 0.3s ease; /* Transição suave para a cor */
+    display: inline-block;
+    margin-bottom: 1rem;
 }
 
 .back a:hover {
-    color: #0056b3; /* Cor mais intensa ao passar o mouse */
     text-decoration: underline;
 }
 
 .cad-form h2 {
     text-align: center;
-    margin-bottom: 20px;
-    color: #444;
-    font-size: 1.8em;
-    font-weight: bold;
+    margin-bottom: 2rem;
+    color: #863a0d;
 }
 
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 1.5rem;
 }
 
 .form-group label {
     display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #333;
 }
 
 .form-group input,
 .form-group select {
-    width: 95%;
-    padding: 10px;
+    width: 100%;
+    padding: 0.75rem;
     border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 14px;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Efeito suave */
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
 }
 
 .form-group input:focus,
 .form-group select:focus {
-    border-color: #007bff;
+    border-color: #863a0d;
     outline: none;
-    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3); /* Efeito de foco com sombra */
 }
 
-.cad-form button {
+button[type="submit"] {
     width: 100%;
-    padding: 10px;
-    background-color: #007bff;
+    padding: 0.75rem;
+    background-color: #863a0d;
     color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
     border: none;
-    border-radius: 4px;
-    font-size: 16px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Transições suaves */
+    transition: background-color 0.3s ease;
 }
 
-.cad-form button:hover {
-    background-color: #0056b3;
-    transform: translateY(-2px); /* Efeito de elevação */
+button[type="submit"]:hover {
+    background-color: #6e2e09;
 }
 
-.cad-form button:active {
-    transform: translateY(2px); /* Efeito de clique */
-}
-
-@media (max-width: 768px) {
-    .cad-container {
-        padding: 15px;
-        max-width: 100%;
-    }
-
-    .cad-form h2 {
-        font-size: 1.6em;
-    }
-
-    .form-group input,
-    .form-group select {
-        font-size: 13px;
-    }
+#mensagemErro {
+    display: block;
+    margin-top: 0.5rem;
+    color: red;
+    font-size: 0.9rem;
 }

@@ -61,14 +61,6 @@
                 <div class="payment-card">
                     <div class="card-header">
                         <h2>Detalhes do Pagamento</h2>
-                        <div class="card-icons">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visa/visa-original.svg"
-                                alt="Visa">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mastercard/mastercard-original.svg"
-                                alt="Mastercard">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg"
-                                alt="Apple Pay">
-                        </div>
                     </div>
 
                     <div class="card-body">
@@ -161,51 +153,34 @@
                     </div>
                 </div>
 
-                <!-- Cartão 3D Preview -->
-                <div class="card-preview animate__animated animate__fadeInRight">
-                    <div class="credit-card">
-                        <div class="card-logo">
-                            <img id="card-brand"
-                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visa/visa-original.svg"
-                                alt="Card Brand">
+
+                <!-- Modal de Confirmação -->
+                <div class="modal-overlay" id="successModal">
+                    <div class="modal-content animate__animated animate__zoomIn">
+                        <div class="modal-icon success">
+                            <span class="material-symbols-outlined">check_circle</span>
                         </div>
-                        <div class="card-number" id="preview-card-number">•••• •••• •••• ••••</div>
-                        <div class="card-details">
-                            <div class="card-name" id="preview-card-name">NOME NO CARTÃO</div>
-                            <div class="card-expiry" id="preview-card-expiry">••/••</div>
+                        <h2>Pagamento Aprovado!</h2>
+                        <p>Seu pagamento foi processado com sucesso. Em instantes você receberá um e-mail com os
+                            detalhes do seu
+                            curso.</p>
+                        <div class="modal-summary">
+                            <div class="modal-summary-item">
+                                <span>Transação:</span>
+                                <span>#TX987654321</span>
+                            </div>
+                            <div class="modal-summary-item">
+                                <span>Valor:</span>
+                                <span>R$ 1.232,15</span>
+                            </div>
+                            <div class="modal-summary-item">
+                                <span>Parcelas:</span>
+                                <span>1x</span>
+                            </div>
                         </div>
+                        <button class="modal-button" id="closeModal">ACESSAR MEU CURSO</button>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal de Confirmação -->
-    <div class="modal-overlay" id="successModal">
-        <div class="modal-content animate__animated animate__zoomIn">
-            <div class="modal-icon success">
-                <span class="material-symbols-outlined">check_circle</span>
-            </div>
-            <h2>Pagamento Aprovado!</h2>
-            <p>Seu pagamento foi processado com sucesso. Em instantes você receberá um e-mail com os detalhes do seu
-                curso.</p>
-            <div class="modal-summary">
-                <div class="modal-summary-item">
-                    <span>Transação:</span>
-                    <span>#TX987654321</span>
-                </div>
-                <div class="modal-summary-item">
-                    <span>Valor:</span>
-                    <span>R$ 1.232,15</span>
-                </div>
-                <div class="modal-summary-item">
-                    <span>Parcelas:</span>
-                    <span>1x</span>
-                </div>
-            </div>
-            <button class="modal-button" id="closeModal">ACESSAR MEU CURSO</button>
-        </div>
-    </div>
 </body>
 
 </html>

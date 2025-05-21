@@ -1,19 +1,18 @@
 const { PrismaClient }  = require('@prisma/client')
 const prisma = new PrismaClient()
 
-const createModulo = async ({id, cursoId, titulo, ordem}) => {
+const createModulo = async ({cursoId, titulo, ordem}) => {
     const modulo = await prisma.modulo.create({
         data:{
-            cursoId,
+            cursoId: parseInt(cursoId),
             titulo,
             ordem
+        },
+        include:{
+            curso: true
         }
     })
-    return{
-        id: modulo.id,
-        cursoId: modulo.cursoId,
-        titulo: modulo.titulo
-    }
+    return modulo;
 }
 
 const listModulo = async () => {
@@ -21,9 +20,19 @@ const listModulo = async () => {
 }
 
 const editModulo = async (id, data) => {
+    const {titulo, cursoId} = data;
+    
     return await prisma.modulo.update({
         where: {id: parseInt(id)},
-        data,
+        data:{
+            titulo,
+            curso:{
+                connect:{id:parseInt(cursoId)}
+            }
+        },
+        include:{
+            curso:true
+        }
     })
 }
 
@@ -33,5 +42,12 @@ const deleteModulo = async(id) =>{
     })
 }
 
-module.exports = {createModulo, listModulo, editModulo, deleteModulo}
+const getModuloById = async(id) =>{
+    return await prisma.modulo.findUnique({
+        where: {id: parseInt(id)},
+        include:{curso: true}
+    })
+}
+
+module.exports = {createModulo, listModulo, editModulo, deleteModulo, getModuloById}
 
