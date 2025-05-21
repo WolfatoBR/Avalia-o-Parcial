@@ -1,32 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/padrao.css">
+    <title>Sobre - ReceitaFácil</title>
+    
+    <!-- Estilos principais -->
+    <link rel="stylesheet" href="../css/sobre.css">
     <link rel="stylesheet" href="../css/menu_sup_and_zap.css">
-    <title>Sobre</title>
+
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
+    <!-- Menu superior será carregado aqui -->
+    <div id="menu-sup"></div>
+
+    <main>
+        <section class="sobre-container">
+            <div class="sobre-conteudo">
+                <h2>Sobre o ReceitaFácil</h2>
+                <p>
+                    O <strong>ReceitaFácil</strong> nasceu da ideia de tornar a culinária mais acessível para todos. 
+                    Aqui, você encontra receitas simples, rápidas e saborosas para o dia a dia ou ocasiões especiais.
+                </p>
+                <p>
+                    Nossa missão é ajudar pessoas de todas as idades a se aventurarem na cozinha com facilidade, 
+                    oferecendo receitas testadas, organizadas por categorias e com instruções claras.
+                </p>
+                <p>
+                    Criado por um entusiasta da tecnologia e da culinária, o site é também um projeto pessoal 
+                    voltado para aprendizado, inovação e paixão por comida.
+                </p>
+                <p>
+                    Esperamos que você se inspire, aprenda e compartilhe muitos momentos saborosos com a gente!
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 ReceitaFácil. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Script para carregar o menu após o DOM estar pronto -->
     <script>
-        fetch('../html/menu_sup.html')
-            .then(response => response.text())
-            .then(html => {
-                document.querySelector('.chama-menu').innerHTML = html;
-            });
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch("menu_sup.html")
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error("Erro ao carregar menu_sup.html");
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById("menu-sup").innerHTML = data;
+                })
+                .catch(error => {
+                    console.error("Erro ao carregar o menu:", error);
+                });
+        });
     </script>
 
-
-    <div class="sobre">
-        <h3>Sobre Nós</h3>
-        <p>
-
-
-        </p>
-
-    </div>
-
-    
 </body>
 </html>
