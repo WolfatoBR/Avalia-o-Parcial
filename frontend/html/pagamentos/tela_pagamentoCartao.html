@@ -11,7 +11,7 @@
     <!-- JS do menu superior -->
     <script src="/Avalia-o-Parcial/javascript/menu.js"></script>
     <!-- CSS da página atual -->
-    <link rel="stylesheet" href="/frontend/css/pagamentos/tela_pagamentoCartao.css">
+    <link rel="stylesheet" href="/frontend/css/pagamentos/tela_pagamento.css">
     <!-- JS da página atual -->
     <script src="/javascript/tela_pagamento.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.6.0/cleave.min.js"></script>
@@ -26,8 +26,30 @@
 </head>
 
 <body>
-    <!-- Menu Superior -->
     <div class="chama-menu"></div>
+    <!-- Para chamar o MENU SUPERIOR -->
+    <script>
+        fetch('../html/menu_sup.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Arquivo não encontrado');
+                }
+                return response.text();
+            })
+            .then(html => {
+                document.querySelector('.chama-menu').innerHTML = html;
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+                // Fallback caso o menu não carregue
+                document.querySelector('.chama-menu').innerHTML = `
+                    <div class="menu-fallback">
+                        <!-- Conteúdo alternativo -->
+                    </div>
+                `;
+            });
+    </script>
+    <!-- Para chamar o MENU SUPERIOR -->
 
     <div class="pagamento-container">
         <div class="barra-nomeCurso">
@@ -37,6 +59,7 @@
         </div>
 
         <div class="pagamento-content">
+
             <!-- Progress Steps -->
             <div class="progress-steps animate__animated animate__fadeInUp">
                 <div class="step active" data-step="1">
@@ -56,6 +79,23 @@
                 </div>
             </div>
 
+            <div class="form-pix">
+
+                <div class="pix-card">
+                    <div class="card-header">
+                        <h2>Pagamento com PIX</h2>
+                    </div>
+
+                    <div class="card-body">
+                        <p>Para realizar o pagamento, escaneie o QR Code abaixo ou copie o código PIX.</p>
+                        <img src="/frontend/imagens/pix_qr_code.png" alt="QR Code PIX" class="qr-code">
+                        <p class="pix-code">
+                            Código PIX: <strong>12345678901234567890</strong>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
             <!-- Formulário de Pagamento -->
             <div class="payment-form animate__animated animate__fadeIn animate__delay-1s">
                 <div class="payment-card">
@@ -181,6 +221,12 @@
                         <button class="modal-button" id="closeModal">ACESSAR MEU CURSO</button>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
 </body>
 
 </html>
