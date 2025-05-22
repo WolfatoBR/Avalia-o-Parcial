@@ -16,13 +16,12 @@
     <script src="/javascript/tela_pagamento.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.6.0/cleave.min.js"></script>
     <!-- Ícones do Google fonts -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <!-- Fontes -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Bibliotecas para animações -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <title>Instituto CoreClever</title>
+    <title>Pagamento - Instituto CoreClever</title>
 </head>
 
 <body>
@@ -30,8 +29,8 @@
     <div class="chama-menu"></div>
 
     <div class="pagamento-container">
-        <div class="barra-nomeCurso">
-            <span class="caixa-pagamento animate__animated animate__fadeIn">
+        <div class="barra-nomeCurso animate__animated animate__fadeIn">
+            <span class="caixa-pagamento">
                 PAGAMENTO
             </span>
         </div>
@@ -57,59 +56,65 @@
             </div>
 
             <!-- Formulário de Pagamento -->
-            <div class="payment-form animate__animated animate__fadeIn animate__delay-1s">
-                <div class="payment-card">
+            <div class="payment-form">
+                <div class="payment-card animate__animated animate__fadeInLeft">
                     <div class="card-header">
                         <h2>Detalhes do Pagamento</h2>
+                        <div class="card-icons">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visa/visa-original.svg" alt="Visa" class="card-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mastercard/mastercard-original.svg" alt="Mastercard" class="card-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg" alt="Apple Pay" class="card-icon">
+                        </div>
                     </div>
 
                     <div class="card-body">
                         <form id="paymentForm">
                             <div class="form-group">
-                                <label for="cardNumber">Número do Cartão</label>
+                                <label for="cardNumber">Número do Cartão <span class="required">*</span></label>
                                 <div class="input-with-icon">
                                     <span class="material-symbols-outlined">credit_card</span>
-                                    <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19">
+                                    <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19" required>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="cardName">Nome no Cartão</label>
+                                <label for="cardName">Nome no Cartão <span class="required">*</span></label>
                                 <div class="input-with-icon">
                                     <span class="material-symbols-outlined">person</span>
-                                    <input type="text" id="cardName" placeholder="Nome como impresso no cartão">
+                                    <input type="text" id="cardName" placeholder="Nome como impresso no cartão" required>
                                 </div>
                             </div>
 
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label for="expiryDate">Validade</label>
+                                    <label for="expiryDate">Validade <span class="required">*</span></label>
                                     <div class="input-with-icon">
                                         <span class="material-symbols-outlined">calendar_month</span>
-                                        <input type="text" id="expiryDate" placeholder="MM/AA" maxlength="5">
+                                        <input type="text" id="expiryDate" placeholder="MM/AA" maxlength="5" required>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="cvv">CVV</label>
+                                    <label for="cvv">CVV <span class="required">*</span></label>
                                     <div class="input-with-icon">
                                         <span class="material-symbols-outlined">lock</span>
-                                        <input type="text" id="cvv" placeholder="123" maxlength="3">
+                                        <input type="text" id="cvv" placeholder="123" maxlength="3" required>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="cpf">CPF do Titular</label>
+                                <label for="cpf">CPF do Titular <span class="required">*</span></label>
                                 <div class="input-with-icon">
                                     <span class="material-symbols-outlined">badge</span>
-                                    <input type="text" id="cpf" placeholder="000.000.000-00" maxlength="14">
+                                    <input type="text" id="cpf" placeholder="000.000.000-00" maxlength="14" required>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="installments">Parcelamento</label>
-                                <select id="installments">
+                                <label for="installments">Parcelamento <span class="required">*</span></label>
+                                <select id="installments" required>
+                                    <option value="" disabled selected>Selecione...</option>
                                     <option value="1">À vista (5% de desconto)</option>
                                     <option value="2">2x sem juros</option>
                                     <option value="3">3x sem juros</option>
@@ -121,7 +126,7 @@
                                 </select>
                             </div>
 
-                            <div class="payment-summary animate__animated animate__fadeIn animate__delay-2s">
+                            <div class="payment-summary animate__animated animate__fadeIn">
                                 <div class="summary-item">
                                     <span>Curso:</span>
                                     <span id="course-name">Marketing Digital Avançado</span>
@@ -146,41 +151,67 @@
                             </button>
 
                             <div class="security-info">
-                                <span class="material-symbols-outlined">verified_user</span>
+                                <div class="security-badges">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/179/179457.png" alt="SSL" title="Site Seguro">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/196/196566.png" alt="PCI" title="PCI Compliance">
+                                </div>
                                 <span>Pagamento 100% seguro. Seus dados estão protegidos.</span>
                             </div>
                         </form>
                     </div>
                 </div>
 
-
-                <!-- Modal de Confirmação -->
-                <div class="modal-overlay" id="successModal">
-                    <div class="modal-content animate__animated animate__zoomIn">
-                        <div class="modal-icon success">
-                            <span class="material-symbols-outlined">check_circle</span>
+                <!-- Cartão 3D Preview -->
+                <div class="card-preview animate__animated animate__fadeInRight">
+                    <div class="credit-card">
+                        <div class="card-logo">
+                            <img id="card-brand" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/creditcard/creditcard-original.svg" alt="Card Brand">
                         </div>
-                        <h2>Pagamento Aprovado!</h2>
-                        <p>Seu pagamento foi processado com sucesso. Em instantes você receberá um e-mail com os
-                            detalhes do seu
-                            curso.</p>
-                        <div class="modal-summary">
-                            <div class="modal-summary-item">
-                                <span>Transação:</span>
-                                <span>#TX987654321</span>
-                            </div>
-                            <div class="modal-summary-item">
-                                <span>Valor:</span>
-                                <span>R$ 1.232,15</span>
-                            </div>
-                            <div class="modal-summary-item">
-                                <span>Parcelas:</span>
-                                <span>1x</span>
-                            </div>
+                        <div class="card-number" id="preview-card-number">•••• •••• •••• ••••</div>
+                        <div class="card-details">
+                            <div class="card-name" id="preview-card-name">NOME NO CARTÃO</div>
+                            <div class="card-expiry" id="preview-card-expiry">••/••</div>
                         </div>
-                        <button class="modal-button" id="closeModal">ACESSAR MEU CURSO</button>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Confirmação -->
+    <div class="modal-overlay" id="successModal">
+        <div class="modal-content animate__animated animate__zoomIn">
+            <div class="modal-icon success">
+                <span class="material-symbols-outlined">check_circle</span>
+            </div>
+            <h2>Pagamento Aprovado!</h2>
+            <p>Seu pagamento foi processado com sucesso. Em instantes você receberá um e-mail com os detalhes do seu curso.</p>
+            <div class="modal-summary">
+                <div class="modal-summary-item">
+                    <span>Transação:</span>
+                    <span id="transaction-id">#TX987654321</span>
+                </div>
+                <div class="modal-summary-item">
+                    <span>Valor:</span>
+                    <span id="transaction-amount">R$ 1.232,15</span>
+                </div>
+                <div class="modal-summary-item">
+                    <span>Parcelas:</span>
+                    <span id="transaction-installments">1x</span>
+                </div>
+            </div>
+            <button class="modal-button" id="closeModal">
+                <span class="material-symbols-outlined">school</span>
+                ACESSAR MEU CURSO
+            </button>
+        </div>
+    </div>
+
+    <!-- Loading Spinner (hidden by default) -->
+    <div class="fullscreen-loader" id="loader">
+        <div class="loader-spinner"></div>
+        <p>Processando seu pagamento...</p>
+    </div>
 </body>
 
 </html>
