@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSS padronizado -->
-    <link rel="stylesheet" href="/css/padrao.css">
+    <link rel="stylesheet" href="/frontend/css/padrao.css">
     <!-- CSS do menu superior -->
     <link rel="stylesheet" href="/frontend/css/menu_sup_and_zap.css">
     <!-- JS do menu superior -->
     <script src="/javascript/menu.js"></script>
     <!-- CSS da página atual -->
-    <link rel="stylesheet" href="../css/menu_area.css">
+    <link rel="stylesheet" href="/frontend/css/menu_area.css">
     <!-- JS da página atual -->
     <script src="/javascript/menu_area.js"></script>
     <!-- Ícones do Google fonts -->
@@ -27,7 +27,7 @@
     <!-- Para chamar o MENU SUPERIOR -->
     <div class="chama-menu"></div>
     <script>
-        fetch('../html/menu_sup.html')
+        fetch('/frontend/html/menu_sup.html')
             .then(response => response.text())
             .then(html => {
                 document.querySelector('.chama-menu').innerHTML = html;
