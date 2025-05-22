@@ -77,14 +77,31 @@
                         Contato
                     </button>
                     <div class="dropdown-content">
-                        <a href="#"><span class="material-symbols-outlined">person</span> Fale com o Professor</a>
-                        <a href="#"><span class="material-symbols-outlined">help</span> Suporte da Plataforma</a>
-                        <a href="#"><span class="material-symbols-outlined">live_help</span> Dúvidas Frequentes</a>
+                        <a href="#" class="dv_fcProfessor"><span class="material-symbols-outlined">person</span> Fale
+                            com o
+                            Professor</a>
+                        <a href="#"><span class="material-symbols-outlined">help</span> Suporte da
+                            Plataforma</a>
+                        <a href="#"><span class="material-symbols-outlined">live_help</span> Dúvidas
+                            Frequentes</a>
                     </div>
                 </div>
             </div>
         </div>
     </nav>
+
+    <dialog open class="dialog_popUp">
+        <div class="dialog-content">
+            <h2>Resetar Progresso</h2>
+            <p>Você tem certeza de que deseja resetar seu progresso? Esta ação não pode ser desfeita.</p>
+            <div class="dialog-buttons">
+                <button id="confirmResetBtn" class="confirm-btn">Confirmar</button>
+                <button id="cancelResetBtn" class="cancel-btn">Cancelar</button>
+            </div>
+        </div>
+    </dialog>
+
+
 
     <!-- Menu Lateral -->
     <nav class="sidebar">
@@ -187,6 +204,7 @@
         <span class="material-symbols-outlined notification-icon">check_circle</span>
         <span class="notification-text">Progresso resetado com sucesso!</span>
     </div>
+
 </body>
 
 </html>

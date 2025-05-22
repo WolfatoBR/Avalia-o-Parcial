@@ -93,6 +93,7 @@ body {
     border-radius: 6px;
     transition: all 0.3s ease;
 }
+
 /* Notificação */
 #notification {
     position: fixed;
@@ -126,15 +127,144 @@ body {
     font-weight: 500;
 }
 
+/* Estilos do Popup */
+#professorPopup {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 350px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transform: translateX(120%);
+    transition: transform 0.3s ease-out;
+    overflow: hidden;
+}
+
+.popup-visible {
+    transform: translateX(0) !important;
+}
+
+.popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.popup-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.fechar-popup {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0 5px;
+}
+
+.popup-content {
+    padding: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: var(--dark-color);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.btn-enviar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+    justify-content: center;
+}
+
+.btn-enviar:hover {
+    background-color: var(--primary-dark);
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+    #professorPopup {
+        width: 90%;
+        right: 5%;
+        bottom: 10px;
+    }
+}
+
 /* Animação de entrada e saída */
 @keyframes slideIn {
-    from { transform: translateY(100px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
+    from {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 @keyframes slideOut {
-    from { transform: translateY(0); opacity: 1; }
-    to { transform: translateY(100px); opacity: 0; }
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+}
+
+.dialog_popUp {
+    position: fixed;
+    bottom: 15px;
+    right: 10px;
+    height: 450px;
+    width: 250px;
+    /* Mudei de vermelho para branco */
+    background-image: url(/frontend/img/mobile.png);
+    border-radius: 10px;
+    transition: transform 0.3s ease-out;
+    z-index: 1000;
+    /* Removi propriedades conflitantes */
+    display: none;
+    /* Adicionei para controle de visibilidade */
+    overflow: auto;
 }
 
 .dropdown-btn:hover {
@@ -416,6 +546,7 @@ body {
     padding: 2rem;
     padding-top: 3.5rem;
 }
+
 .botao-marcar {
     display: flex;
     align-items: center;
@@ -441,6 +572,7 @@ body {
 .video-item.watched .botao-marcar {
     color: var(--success);
 }
+
 /* Estilo quando o vídeo já foi marcado como visto */
 .botao-marcar.disabled {
     opacity: 0.7;
