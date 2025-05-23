@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS padronizado -->
+    <link rel="stylesheet" href="/frontend/css/padrao.css">
+    <!-- CSS do menu superior -->
+    <link rel="stylesheet" href="/frontend/css/menu_sup_and_zap.css">
+    <!-- JS do menu superior -->
+    <script src="/javascript/menu.js"></script>
+    <!-- CSS da página atual -->
+    <link rel="stylesheet" href="/frontend/css/cursos_planos.css">
+    <!-- JS da página atual -->
+    <script src="/javascript/menu_area.js"></script>
+    <!-- Ícones do Google fonts -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Instituto CoreClever</title>
+</head>
+
+<body>
+    <!-- Botão para abrir/fechar o menu (mobile) -->
+    <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+
+    <!-- Para chamar o MENU SUPERIOR -->
+    <div class="chama-menu"></div>
+    <script>
+        fetch('/frontend/html/menu_sup.html')
+            .then(response => response.text())
+            .then(html => {
+                document.querySelector('.chama-menu').innerHTML = html;
+            });
+    </script>
+    <!-- Para chamar o MENU SUPERIOR -->
+
+    <div class="titulo">PLANOS</div>
+
+    <div class="container">
+        <div class="plano dv_planoBasico">
+            <h1>Básico</h1>
+            <h2 class="subTitulo">R$89,90</h2>
+            <ul class="dv_planoBasicoTxt">
+                <li><span class="material-symbols-outlined">done_outline</span>Apostilas completas</li>
+                <li><span class="material-symbols-outlined">done_outline</span>Exercícios práticos</li>
+                <li><span class="material-symbols-outlined">done_outline</span>Avaliações online</li>
+                <li><span class="material-symbols-outlined">done_outline</span>Networking com colegas</li>
+                <li><span class="material-symbols-outlined">done_outline</span>Troca de experiências</li>
+                <li><span class="material-symbols-outlined">done_outline</span>Resposta rápida de dúvidas</li>
+            </ul>
+            <div class="adquirir">
+                <a class="btn-adquirir" href="/frontend/html/tela_pagamento.html">Adquirir</a>
+            </div>
+        </div>
+
+        <div class="plano dv_planoIntermediario">
+            <h1>Intermediário</h1>
+            <h2 class="subTitulo">R$159,90</h2>
+            <ul class="dv_planoIntermediarioTxt">
+                <li><span class="material-symbols-outlined">done_outline</span>Acesso vitalício a todo conteúdo</li>
+                <li><span class="material-symbols-outlined">done_outline</span>Mentorias com sessões online com
+                    especialistas renomados</li>
+                <li><span class="material-symbols-outlined">done_outline</span>Participação gratuita em eventos
+                    exclusivos da plataforma</li>
+                <li><span class="material-symbols-outlined">done_outline</span>Capacitação técnica avançada</li>
+                <li><span class="material-symbols-outlined">done_outline</span>Empreendedorismo digital</li>
+                <li><span class="material-symbols-outlined">done_outline</span>+ Benefícios do Plano Básico</li>
+            </ul>
+            <div class="adquirir">
+                <a class="btn-adquirir" href="/frontend/html/tela_pagamento.html">Adquirir</a>
+            </div>
+        </div>
+        
+        <div class="plano dv_planoStartup">
+            <h1>Startup</h1>
+            <h2 class="subTitulo">R$199,90</h2>
+            <ul class="dv_planoStartupTxt">
+                <li><span class="material-symbols-outlined">done_outline</span>Mentoria Premium com Especialistas +
+                    Análises Profundas</li>
+                    <li><span class="material-symbols-outlined">done_outline</span>Acesso a plataforma de business
+                        intelligence</li>
+                        <li><span class="material-symbols-outlined">done_outline</span>Relatórios mensais de performance</li>
+                        <li><span class="material-symbols-outlined">done_outline</span>Conexão direta com investidores</li>
+                        <li><span class="material-symbols-outlined">done_outline</span>Eventos fechados com líderes do setor
+                        </li>
+                        <li><span class="material-symbols-outlined">done_outline</span>+ Recursos dos Planos Básico e
+                            Intermediário</li>
+                        </ul>
+                        <div class="adquirir">
+                            <a class="btn-adquirir" href="/frontend/html/tela_pagamento.html">Adquirir</a>
+                        </div>
+        </div>
+    </div>
+</body>
+
+</html>
