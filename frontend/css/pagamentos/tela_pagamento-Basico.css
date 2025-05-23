@@ -432,6 +432,23 @@
      font-weight: 700;
  }
 
+ .dv_planoBasicoTxt {
+     padding: 14px;
+     white-space: rap;
+ }
+
+ .dv_planoBasicoTxt span {
+     font-size: 1.95rem;
+     color: #6e48aa;
+     font-weight: 600;
+     margin: 0 5px 0 0;
+     display: flex;
+ }
+
+ .dv_planoBasicoTxt li {
+     margin: 20px 0 20px 0;
+ }
+
  @media (max-width: 768px) {
      .card-header h2 {
          font-size: 1.2rem;
