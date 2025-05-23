@@ -238,7 +238,7 @@ function showSuccessModal(paymentMethod) {
     if (closeModal) {
         closeModal.addEventListener('click', function() {
             successModal.style.display = 'none';
-            window.location.href = 'area_do_aluno.html';
+            window.location.href = '../main_area.html';
         });
     }
 }
